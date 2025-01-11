@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# -Sd  make delphi compadible
+fpc -O --automake SURVEYHP.PAS

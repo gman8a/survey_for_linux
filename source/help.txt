@@ -1,0 +1,289 @@
+POINT INPUT OPERATIONS
+AD-Add pts     
+ED-Edit pts    
+IN-INsert Pt     
+FE-Field Elev   
+QS-QuickShot
+MC-Map Check   
+AM-Append/Move 
+GP-Get Pts       
+SS-SideShot     
+TP-ToPo input
+
+COORDINATE GEOMETRY FUNCTIONS
+LL-Line/Line   
+LP-Line/Pt     
+LA-Line/Arc int  
+RA Road Arc     
+LT-Line/arc Tan
+AA-Arc/Arc Int 
+PP-Pt/Pt       
+OF-OFfset pt     
+SA-Snap Arc     
+CC-Compare Coor
+
+CALCULATION PROCEDURES
+AN-ANgle math  
+TR-TRiangle    
+ST-STation calc  
+SO-Stake Out    
+RE-REvise pts
+CU-CUrve math  
+AR-ARea calc   
+VC-Vert.Curve    
+FW-Find Window  
+CT-ConTour
+
+PT COORDINATE MODIFICATION & DRAWING
+RT-Rotate/Tran 
+ET-Elev.Trans. 
+BA-BAlance trav. 
+FP-Find Prox.
+
+POINT DATA OUTPUT FUNCTIONS
+BR-BRowse pts   
+DE-Descrip Edit
+
+POINT PROTECTION & OTHER
+VE-VErsion 
+PC-Protect Co. 
+UC-Unprot Co.  
+PE-Protect Elev  
+UE-Unprot Elev 
+
+OTHER OPERATIONS
+EX-EXit  DOS   
+BU-BackUp file 
+RC-ReCalc tog.   
+FL-FLush pts.  
+NP-No_Pts
+
+
+GEOMETRY FUNCTIONS
+LL - Line Line intersection. Each line is defined by a starting point and
+     a direction from that point number.
+LP - Line point intersection.  This option finds the point of intersection
+     of two lines one of which is perpendicular to the other and intersects
+     the point.
+LA - Line arc intersection. Finds the intersection points of a given line
+     with a given arc.
+LT - Line arc tangent. Finds a line tangent to a given arc and intersecting
+     a given point.
+AA - Arc arc intersection.  Finds intersection points of two given arcs.
+PP - Point to point (inverse). Finds distance and bearing between two
+     known points.
+OF - Offset point. Finds the intersection of two lines that are parallel to
+     two known lines. An offset distance (left or right) from each known line
+     is required.
+RA - Road Arc Calculation given 3 P.I.'s, Radius and road width this function
+     will calculate and add 7 new pts. around the road curve.
+SA - Snap Arc will compute center pt, P.C., P.T. given a tangant line and
+     radius offset from the tangant line.
+CC - Compare Coordinates.  Used to compare Northing and Easting point
+     coordinates.  This is useful if you are working with another person's
+     map and your own field data.
+
+CALCULATION PROCEDURE
+AN - Angle math. This function adds and subtracts azimuths and bearings.
+     The sum total will always be less than 360.
+CU - Curve calculations. This function solves for unknown variables of
+     a simple curve given two of the following; radius, delta, length,
+     tangent, and long chord.
+TR - TRiangle computations for Right and Oblique triangles.
+AR - Area Calculation.  This function calculates the area of a known point
+     loop.  You may traverse curves and lines.  Three data input methods
+     types can be chosen (keyboard input, disk-file input, and digitizer
+     input). The Keyboard Option will output the loop to File: jobname.LNZ.
+SO - Stake Out.  Used to do radial state out of given points from a given
+     point Back sight to another given point. Useful for quick pt computations
+ST - STation on curves.  This function will calculate and add stations points
+     around a curve to the point file.  Before using STation you must have
+     found the PT, PC, Center point of the curve.  You may enter the station
+     increment (50,100) and the offset distance from the PC.
+VC - Vertical Curve.  Finds the elevation along a vertical curve given the
+     PVC, PVT, Grade#1, Grade#1, PVI elevation.
+FW - Find Window.  Finds the maximum & minimum northing and easting limits
+     of a range of coordinates.  Used mostly to to find display window limits
+     for plotter setup parameters.
+RE - REvise data in existing point records, You may revise the FROM:Pt#,
+     BS:Pt#, Setup, Description, and the rod shot.  This option is used if
+     many point are entered with the wrong data.
+CT - ConTour is used to interpolate even contours between two points.  It will
+     add point to the file.  When you make an elevation plot you can easily
+     draw contours.
+
+POINT COORDINATE MODIFICATION PROCEDURES
+RT - Rotate Translate.  This function rotates points about a given point
+     using a given counter clockwise rotation angle.  Also Translation of
+     a point range may be accomplished simultaneously. You may accomplished
+     each function without the other.  After point rotation/translation is
+     complete the points are protected (negative From_pt).
+ET - Elevation Translation is used to adjust elevations from one datum
+     to another.  ET would most likely be used after a Get Point (GP)
+     procedure of data from an adjoining job.
+BA - Balance Traverse.  Balances a open/closed loop of traverse pts using the
+     compass rule.  Refer to MANUAL.DOC for more data.  All traverse points
+     must have the SETUP option set to YES and all consecutive traverse
+     points must come from the preceding traverse point. If the closing angle
+     is not in the loop then do NOT adjust the angles.  The only way to enter
+     the closing angle is by adding another consecutive traverse pt with a
+     distance equal to zero. For closed loops the 2nd pt entered must orintent
+     the traverse, hence the 3rd point will have the 1st angle turned.  You may
+     chose not to balance certain angles by entering their pt.#s as negatives.
+DR - DRawing template is an automatic draw feature that will append drawing
+     command blocks to a file with extension .LNZ.  The Template file name
+     is DRAW.LN; all drawing templates are placed in this file and invoked
+     with the DR command.
+MS - Make Shape.  This is an advance function that is used to get
+     coordinate pairs from the digitizer for the purpose of producing a
+     shape file for the plot function.  The coordinate pairs are stored
+     in a shape file in ASCII form.  This shape file is then loaded into
+     an editor and Plot line drawing commands are build around the pairs
+     to produce a shape that can be draw.  (See Manual for more info).
+ML - Make Line is a major modular used to append drawing commands to an
+     existing line file.  You must have a digitizer connected to use this
+     procedure.  The draw methods employed in PC-TS will get you drawing
+     with a pencil and paper and NOT on the screen.
+     (The way drawing was ment to be.)
+FP - Find Proximity will make a Stake-Out print out sheet of points within
+     a proximity distance from the setup point and in a given pt range.
+
+POINT DATA OUTPUT FUNCTIONS
+PR - PRint points coordinates and other point info to the printer.
+TA - TAg printer page. Prints a Time, date, and File name tag to the printer.
+BR - Browse point.  Used to look at point data on the screen. Four points
+     are displayed at once.  You may use the cursor keypad to control point
+     display.  Active keys are ESC, HOME, END, PgUp, PgDw, ArrowUp ArrowDown.
+TO - TOggle printer on and off.  Most functions that print data are linked to
+     a printer ON/OFF variable.  If you do not want printer output then TOggle
+     the printer off.  The state of this variable is displayed at the bottom
+     of the screen (PRT:ON).  Printer OFF is a good state while adjusting
+     Lot area sizes in conjunction with Area (AR) file input mode.
+PL - PLot points using the line file.  (See manual for more info.) This
+     option invokes the interpretation of a line file (user created) to
+     make a plotted image of the point file.  This is a very powerful plotting
+     system and will require some time and practice to understand. However
+     the plot system is simple in nature so that you may make a plot for your
+     very first job.  PC-TS has a automatic plot spooler built in.  To use this
+     feature edit the PLOT.CFG file, making the file handle DR (DRawing file).
+AO - ASCII output will create a ASCII file on the disk mainly for use as input
+     to other systems.
+AI - ASCII input will get coordinate and elev. data from a ASCII file.
+     The file ASCII-IN.FMT has the ASCII INput format of the data file.
+DX - DXf file creation.  This function will created a file that is compatible
+     with AUTOCAD.  AUTOCAD can read coordinate pairs in from this file and
+     you may use function of AUTOCAD to make a drawing.
+DE - Description Edit will quickly allow you to edit only the description
+     field of points.  Useful in conjuction with Field Cad "FC".
+AS - Autocad Script will convert a line file to a script file that can be
+     input into Autocad using the Script command.
+[33;40mDIGITIZER FUNCTIONS::[40;36m
+SD - Set Digitizer.  Use to set a sheet on the digitizing pad. Proper
+     orientation of a sheet is first required so that digitized
+     coordinates can be utilized.  You can orient the sheet by using grid
+     on the sheet or by using two known points on the sheet.
+DA - Digitizer Add. Used to add a serious of points to the point file from
+     the digitizing pad.  The Set Digitizer (SD) function must have been
+     used prior to using the Digitizer Add (DA) function.
+DM - Digitizer Menu allows the user to setup a menu on the digitizer.
+     This option is used to tell PC-TS where your menu is located.
+     Also the menu values can be tested to assure proper operation.
+LD - Leagal Description is a word processor system used to create legal
+     documents.  It is linked to the current map on the digitizer so that
+     the correct map dimensions can be easily entered into the document.
+
+OTHER FUNCTIONS
+VE - Show PC-TS Version Information Screen.
+FC - Field Cad is a coded system of lines and markers that automatically
+     builds line files.  The first 2 characters of a point description are
+     properly coded in the field and entered into the PC-TS pt. description,
+     then FC is used for Field Cad Line File conversion.
+     See files MARKER.LN0,  MARKER.LN4,  MARKER.PT for Field Card Cheat Sheet.
+
+PROTECT FUNCTIONS
+PC - Protect Coordinates.  Negates From point.  A negative or zero from point
+     will protect the coordinates from being modified by the dynamic system.
+UC - Unprotect Coordinates.  Will set the From point positive and allow the
+     coordinates to be modified by the recalculation dynamics.
+PE - Protect Elevation.  Negates Rod Shot.  A negative or zero rod shot
+     will protect the elevation from being modified by the dynamics system.
+UE - Unprotect Elevation. Will set the rod shot positive and allow the
+     elevation to be modified by the recalculation dynamics.
+
+OTHER OPERATION
+EX - EXit to MS-DOS.  You must use the EX option before you turn the computer
+     off.  This is important so that MS-DOS will flush disk write buffers.
+     If you turn the system off with out EXiting from PC-TS then some point
+     data may be lost.
+FL - FLush point data to the disk.  This option should be used frequently
+     to assure that no point data is lost due to a power failure or shut
+     down before the EXit option is used.
+RC - ReCalculation toggle.  This is a toggle switch (ON/OFF) controlling
+     recalculation after editing a point.  If you are editing many points
+     then shut recalculation off, after all the points have been edited
+     toggle recalc. ON(TRUE) and edit the lowest point number again so that
+     recalculation will effect (update) the edited points.
+BU - Back Up the point file.  This is usally done before a balance
+     procedure so that the raw field data is saved
+CO - COmunications parameters of the RS-232 ports are set. Also you may
+     capture data from a serial device connected to a COM port.
+     This option is used to collect data from the SDR data collector and
+     to Down Load Coordinate Pairs back into the data collector.
+SH - SHell to DOS will allow you to quick enter the DOS Command interpreter
+     to do a DOS function and then EXIT back from dos to PC-TS. This command
+     comes in handy for file directories and many other minipulations.
+PS - Printer Setup is use to change the number of characters per inch
+     printed.  The printer specific data is in an ASCII file named PRINT.CFG.
+     You may modify this file for your printer; use the same file format.
+DC - Data Collector is a powerfull procedure that will Transform and Convert
+     Raw Comms Output data from the SDR2 Field Data Collector into PC-TS.
+EE - Editor is use most often to modify ASCII files that interact with PC-TS.
+     This editor uses standard Word Star command functions.  Press F1 for help.
+NP - Number of Points in the point file can be set.  Used to delete unwanted
+     points at the end of the file.
+
+LEARN and PROGRAMMING OPERATIONS
+LM - Learn Mode is used to programm the computer for a cogo procedure
+     that is not in the PC-TS Menu.
+|| - Exit Learn Mode after programming is complete.
+RS - Run Script is used to Run a program that was compiled in the Learn Mode.
+RF - Register Flip is used to manipulate the program registers for
+     programming purposes.  Generally when writting a program, RF is the first
+     option used to get all needed input data for a particular problem.
+IF - IF THEN, Invokes an IF comparison for programming in the learn mode.
+EL - ELSE path of IF THEN ELSE programming construct.
+EI - End If, for every and all IF's there must me 1 ENDIF.
+     IF statements can be nested. Also Blocks of PC-TS statments can be
+     grouped when using IF statment. (see LEARN.DOC memo).
+LB - Put a jump transfer label in the script file when in the Leran Mode.
+JP - Jump to label, the jump can either be up or down in the script file.
+SE - Settings of PC-TS system variables. May be used as 1st function in then
+     Learn Mode.
+
+POINT INPUT OPERATIONS
+AD - Add points to file, Full control of point data input.
+ED - Edit an existing point in the point file.
+IN - Insert a point into the file. Insert will shift points down in the file.
+     The From_pt and BS_pt of the shifted points are modified as required.
+     Insert is used if you leave out a leg of a traverse or map boundary.
+EL - Modify existing point elevation without changing the rest of the point
+     data record.  If you have recorded field Delta Elevation, then use the
+     letter D to switch input modes when asked for the Vertical Angles.
+TP - ToPo data input.  Much like Side Shot (SS) except the rod reading is
+     entered so that the elevation can be calculated.  Also you must exit
+     TP to modify the FROM:Pt# and BS:Pt.  This makes the data entry faster.
+SS - Side Shot.  Quick method of adding horizontal point data.  Use Side
+     Shot instead of ADD. also use QS Quick Shot
+MC - Map Check.  Quick method of adding horizontal point data from a boundary
+     map.  The from point and back sited point will automatically advance.
+     You may enter the distance with the letter 'H' to Hold the From point.
+AM - Append Move.  To append blank point data to the point file and also
+     to move a block of existing points in the point file.  You may append
+     points so that a group of points will get numbered as desired.
+     Note: Do not append large blocks of blank points with no intention
+     of using them.
+GP - Get Points. To get a range of data points from another point file
+     and append these points to the current logged file.
+QS - QuickShot is like Side Shot except you can not control then FROM:pt#
+     and the BS:Pt#.
+
