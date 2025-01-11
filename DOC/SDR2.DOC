@@ -1,0 +1,61 @@
+SDR-2 FIELD OPERATION - POINTS TO KEEP IN MIND.
+===============================================
+
+The two main modes of operation of the SDR-2 that have been considered
+in the PC-TS program,  1. TRAVERSE and 2. TOPO mode.  These two mode
+can be used together to record all field data required. There are a few
+basic rules that should be kept in mind:
+
+1.  Always start auto Point numbering at 1000 (on thousand)
+    The SDR translation procedure of PC-TS is key around auto point
+    numbering beginning at point #1000.
+
+2.  All field control or setup points must be the lower number set.
+    ===============================================================
+    1, 2, 3, ... 100 ect.
+    These control points should be used sequentially ( 1 then 2 then 3, ect);
+    If you skip from control pt #5 to say #10 and the try to enter new
+    control point I.D.'s  #6,7,8,9. unpredictable result may occur with
+    respect to reconition of some obsevation when translation with PC-TS.
+    Therefore use the control point I.D. #'s numbers sequentially.
+    If you do a spur then continue with sequential control point numbering.
+    When ever you are doing control shots you must use the READ-RECORD
+    key sequence.  This will allow you to MANUALLY enter the Pt# I.D. #'s
+    rather that Auto numbering. (*** All control must be handle this way.*** )
+
+3.  Topo Mode must be recording the RAW obsevation data.
+    You should be using topo mode for all of your side shots, this will
+    greatly reduce memory consumtion.
+    All Vertical Angles are always measured off the Zenith.
+    All Horizontal Angles are always turned Right.
+
+4.  You Should Keep a set of legs and target setup on the back sight point
+    because the SDR-2 will often ask for a Back sight shot.
+    Also more importantly is that when ever you change modes form TOPO
+    to TRAVERSE you should take as your FIRST shot the back sight point.
+    The SDR translation procedure of PC-TS is keyed around then Back sight
+    shot being the first shot of a setup.
+
+5.  If you are doing a traverse, I feel that you should call your first
+    setup point #2 rather than pt#1.  You should call the Back Sight from
+    Setup Pt#2, Pt#1.  This could avoid some confusion in the office when
+    you are coordinating and balancing with PC-TS.  By using this system
+    Pt#1 in PC-TS will have the starting coordinates and pt#2 can be
+    directly oriented from pt#1.  This will allow you to apply the north
+    direction to the system.
+
+6.  Alway put your target heights in and you H.I.'s.  The PC-TS system
+    will do point elevation calculations.  If the target height changes
+    for one shot to the next use the READ-RECORD key sequence.
+
+7.  The PC-TS conversion procedure will NOT re-enter traverse shots. Therefore
+    if you record a traverse shot and it is not correct, then reshot it and NOTE
+    in your field book that this traverse shot needs to be edited after the PC-TS
+    point file has be created.  Or if you want you can edit the intermediate
+    (.70) file and delete the line containing the bad traverse shot, the next
+    line should contain the good shot.
+
+8.  Alway capture the PRINTED OUTPUT from the data collector.  This is a good
+    record for referal.  All Data Collector COmmunication is handled with PC-TS
+    option "CO".
+

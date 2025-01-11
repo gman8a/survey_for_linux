@@ -1,0 +1,140 @@
+    Key                Action
+  =======              ======
+  Page-Up,   ^P        Put Next Number in User Storage Register.
+                       Use ^P to set the register display range.
+
+                       Use + - = * / and <SPACE>
+
+  Page-Down, ^G        Get Number from User Storage register.
+                       Any resgiter (1-100) can be recalled.
+
+                       Use  R ight  L eft  and  A zimuth  for Angles type.
+                       This 1 of 2 ways to retrived an angle and turn
+                       it to the right or left.
+                       Otherwise the angle is set as an absolute azimuth,
+                       regaurdless of Angle Input Mode indicators state.
+
+
+            F1-F10     Get number from rolling register set displayed on screen.
+                       F10 for angles activates a Point to Point calculation.
+
+  Alternate F1-F10     (Put, Add, Subtract, Multiply, Divide) the
+                       display regiter set by the Next Number.
+
+  Shift     F1-F10     Get Number from the displayed register set.
+
+  Control   F1-F10     Get the Number of Point - Function Key value.
+                       F10 alway is equal to the current Number of Points.
+                       This is only active in the Point or Integer input mode.
+
+  Control   F1-F10     Get User Register Angle and ask R ight L eft or A szmith.
+
+Notes: When storing a number in a user register the first key sequence pressed
+       must be the one of then Register Storage key sequences above.
+
+       Next, use the comment symbom '{' to tell the user the input data
+       description.
+
+       Next, If the user is to input this data then cause an input error.
+       The best way is to type a short prompt for the input data.
+       This will serve as an additional input prompt.
+       if the input data is azimuth then cause the error by entering --.
+
+
+
+IF THEN ELSE Operation
+======================
+
+IF is the menu option to activate the IF function.
+IF should only be used when program a Script in the Learn Mode.
+
+EI (END IF) is required to end all IF block script.
+
+Example #1
+
+IF Register #1 > Register #2 then
+   PP 1 2
+   PP 3 4
+   PP 4 5
+ENDIF (EI)
+
+In the above example if the argument evaluates true then three Point/Point
+Operation will be performed.
+
+Example #2
+
+IF Register #1 > Register #2 then
+   PP 1 2
+   PP 3 4
+   PP 4 5
+ELSE  (ES)
+   PP 6 7
+   PP 8 9
+   PP 9 10
+ENDIF (EI)
+
+In example #2 if the argument is false the the ELSE block of script will
+be performed.
+
+NESTED IF Statments (10 Levels)
+===============================
+
+IF R1 > R2 then
+  PP 1 2
+  PP 3 1
+ELSE IF R3 = R4 then
+       PP 3 4
+       PP 4 2
+     ELSE IF R5 < R6 then
+            PP 6 7
+            PP 8 9
+            PP 10 11
+          ELSE PP 20 30
+          ENDIF
+     ENDIF
+ENDIF
+
+In the above example only one block of script will be performed.
+This program structure is the same as the Pascal CASE statement.
+
+
+
+At any Input Time you may use the follow control characters.
+============================================================
+
+{  Begin Comment Line
+&  Extented Comment Line (used as the last character in a comment line)
+   Then Press the Comment Symbol '{' again to enter the next part of
+   the comment.
+!  Wait Until Keypressed (User Pause)
+$  Delay 1 second
+
+Do not use these characters in the Description of a point.
+
+
+LINE FILE DRAWING TEMPLETE
+==========================
+To write a Line File Drawing Templete use SideKick to edit file DRAW.LN.
+All templetes are put in this file.
+
+Give the Templete a name and put two colons after it.
+Then enter the line drawing commands using the # sign to indicate
+point numbers that will be modified with a point offset.
+
+Example
+
+ROAD-CURVE::  Draw C.L. and edges of road arcs
+2 #2 #5 #1 1 1 p
+2 #3 #6 #1 0 1 p
+2 #4 #7 #1 1 1 p
+
+
+Use DR-DRaw Template in PC-Turbo Survey.
+This procedure will ask for an offset to add to the points with a # sign
+in front of them (as shown above).
+The result output of this procedure is appended to a line file .LNZ.
+This line file (.LNZ) should be block read ^KR with SideKick into the
+line file that the user is building.
+
+
+

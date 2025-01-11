@@ -1,0 +1,299 @@
+86 0 0 0 0 0 0      L E G E N D      T E M P L A T E
+==============================================================================
+
+ READ THIS FILE ( LEGEND.LN ) INTO YOUR LINE FILE AND PLACE IT AT THE BOTTOM
+ OF THE FILE. COPY NECESSARY PARTS TO APPROPRIATE SPOTS IN YOUR LINE FILE.
+ AFTER COMPLETION OF BUILDING YOUR LINE FILE DELETE THIS TEMPLATE FROM YOUR
+ FILE.
+
+ TO FIND SEGMENTS OF THIS TEMPLATE:
+ PLACE CURSOR BELLOW AT   QUESTION MARK
+ PRESS  <Ctrl> KEY AND HOLD DOWN THEN PRESS <Q> <F>
+ AT PROMPT TYPE IN ONE OF THE FOLLOWING IN ALL CAPS THEN <ENTER>
+ * LENDS * PENS * BMARK * MARKERS * LINES * DLINE * HOW
+ ?
+
+    * * * * *   L I N E   F I L E   S E T U P    S W I T C H E S   * * * * *
+    0   100   0   0   0   0    0     0    1   001   5000  10000   9000  19000
+99 Brdr Scle Rot Xmv Ymv Grd LnEnd PtLbl Lgnd StPt LowNth LowEst UprNth UprEst
+
+99 0 0 0 0 0 0    @ @ @ @ @ @  S C A L E  @ @ @ @ @ @
+99 @SCALE  X-HAIR      --->I     Ln_Type      PEN#
+ 16  100      2          0          0           1
+
+ 99 0 0 0 0 0 0    SET TRIANGLE MARKER FOR FIELD CONTROL  ___    ___
+ 99 0 0 0 0 0 0                                           \+/----\+/
+ 3 0 0 4 4 0
+ 5 001 xxx 2 2 1 A
+ 1 xxx 001 2 2 1 A
+
+LENDS
+ 99 0 0 0 0 0 0  ______ . /    L I N E  E N D S  \ . __________
+==============================================================================
+ 99 0 0 0 0 0 0      ________/ LINE END OFF
+ 3 1 0 0 9 0
+
+ 99 0 0 0 0 0 0      ________./ LINE END DOT ON
+ 3 1 0 0 9 2
+
+ 99 0 0 0 0 0 0      ------ + -----   LINE END CROSS ON
+ 3 1 0 0 9 1
+===============================================================================
+PENS
+  !  !  !  !  !  !    P E N   C H A N G E   C O M A N D S    !  !  !  !  !  !
+  ---------------------------------------------------------------------------
+ 0 1 1 0 0 2 n      !!!!!!!!!!!!!! #2  SOLID LINE    ____________
+ 0 1 1 0 9 1 n       !!!!!!!!!!!!! #1  NO LINE
+ 0 1 1 0 9 2 n       !!!!!!!!!!!!! #2  NO LINE
+ 0 1 1 0 9 3 n       !!!!!!!!!!!!! #3  NO LINE
+ 0 1 1 0 9 4 n       !!!!!!!!!!!!! #4  NO LINE
+ 0 1 1 0 9 5 n       !!!!!!!!!!!!! #5  NO LINE
+ 0 1 1 0 9 6 n       !!!!!!!!!!!!! #6  NO LINE
+ 0 1 1 0 9 7 n       !!!!!!!!!!!!! #7  NO LINE
+
+==============================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BMARK
+ --------- -- -- ------ B O U N D A R Y   M A R K E R S --------- -- -- -----
+
+99 0 0 0 0 0 0     EXISTING I.P.  SOLID CIRCLE  0---- - - ----0---- - - ---
+ 0 1 1 0 9 2 n      !!!!!!!!!!!!!! #2  NO LINE
+  3 xxx 0 5 6 2
+  3 xxx 0 4 6 2
+  3 xxx 0 3 6 2
+  3 xxx 0 2 6 2
+  3 xxx 0 1 6 2
+ 0 1 1 0 9 1 n       !!!!!!!!!!!!! #1  NO LINE
+  3 xxx 0 1 6 2 EXIST. I.P.
+ 99 0 0 0 0 0 0  ____________________./ DOT ON LINE END
+
+ 99 0 0 0 0 0 0     (+)------(+)   P R O P O S E D  I R O N P I N S  (+)----
+ 3 xxx 0 5 6 2 PROP. I.P. Typ.
+
+99 0 0 0 0 0 0     EXISTING MON.  SOLID SQUARE  [ ]---- - - ----[ ]--- - - ---
+ 0 1 1 0 9 2 n      !!!!!!!!!!!!!! #2  NO LINE
+  3 xxx 0 5 2 2
+  3 xxx 0 4 2 2
+  3 xxx 0 3 2 2
+  3 xxx 0 2 2 2
+  3 xxx 0 1 2 2
+ 0 1 1 0 9 1 n       !!!!!!!!!!!!! #1  NO LINE
+  3 xxx 0 1 2 2 EXIST. I.P.
+ 99 0 0 0 0 0 0  ____________________./ DOT ON LINE END
+
+ 99 0 0 0 0 0 0    CONN HWY DEPT MONUMENT MARKER [0] [0] [0] [0] [0] [0]
+ 0 1 1 0 9 2 n      !!!!!!!!!!!!!! #2  NO LINE
+ 3 xxx 180 6 2 2
+ 0 1 1 0 9 1 n       !!!!!!!!!!!!! #1  NO LINE
+ 3 xxx 180 3 6 2 CHD BOUNDARY MON.
+
+ 99 0 0 0 0 0 0    PROPOSED MONUMENT MARKER [+]  [+]  [+]  [+]  [+]  [+]
+ 0 1 1 0 9 2 n      !!!!!!!!!!!!!! #2  NO LINE
+ 3 xxx 180 6 2 2
+ 0 1 1 0 9 1 n       !!!!!!!!!!!!! #1  NO LINE
+ 3 xxx 180 4 6 2 PROP. MON.
+
+ 99 0 0 0 0 0 0      0 0    S T O N E   B O U N D
+ 99 0 0 0 0 0 0     0 0 0------------  --  --  -----------
+ 99 0 0 0 0 0 0      0 0
+ 3 xxx 0 4 13 2 Stn. Bnd. Typ.
+
+===============================================================================
+MARKERS                     M A R K E R S
+                            =============
+ 99 0 0 0 0 0 0             -O-    -O-   UTILITY POLES  -O-   -O-
+ 3 xxx 0 4 10 2 SNET
+
+            99 0 0 0 0 0 0     MAN HOLE MARKER   O=======O======O
+            0 1 1 0 0 2 n      !!!!!!!!!!!!!! #2  solid line
+            3 xxx 0 16 6 2
+            1 1 1 0 9 1 n     !!!!!!!!!!!!!!!!!!!!!! #1
+            3 xxx 0 8 6 2 man hole
+
+
+
+
+
+
+
+
+
+
+
+99 0 0 0 0 0 0       *   *   *   *     T R E E S   *   *   *   *
+3 xxx 0 9 11 2 Tree W/Wire Typ.
+3 xxx 0 9 12 2  Evergreen Tree Typ.
+
+99 0 0 0 0 0 0   DEEP  TEST  PITS  """|    |"""
+99 0 0 0 0 0 0                     '''|    |'''
+99 0 0 0 0 0 0                     '''|    |'''
+99 0 0 0 0 0 0                     '''|____|'''
+ 0 1 1 0 9 2 n      !!!!!!!!!!!!!! #2  NO LINE
+ 3 xxx 0 6 2 2
+ 0 1 1 0 9 1 n       !!!!!!!!!!!!! #1  NO LINE
+ 3 xxx 0 8 0 2 DEEP TEST PIT TYP.
+
+99 0 0 0 0 0 0    PERC.  TESTS      """| |"""
+99 0 0 0 0 0 0                      '''|~|'''
+99 0 0 0 0 0 0                      '''|_|'''
+ 0 1 1 0 9 2 n    !!!!!!!!!!!!!!!! #2
+ 3 xxx 0 6 6 2
+ 0 1 1 0 9 1 n    !!!!!!!!!!!!!!!! #1
+ 3 xxx 0 8 0 n
+
+99 0 0 0 0 0 0     PROPOSED   WELL   {O}    {O}    {O}
+ 0 1 1 0 9 2 n      !!!!!!!!!!!!!! #2  NO LINE
+ 3 xxx 0 6 3 2
+ 0 1 1 0 9 1 n       !!!!!!!!!!!!! #1  NO LINE
+ 3 xxx 0 3 6 2 PROP. WELL TYP.
+
+99 0 0 0 0 0 0       EXIST.   WELL  { }   { }   { }  { }
+ 0 1 1 0 9 2 n      !!!!!!!!!!!!!! #2  NO LINE
+  3 xxx 0 5 3 2
+  3 xxx 0 4 3 2
+  3 xxx 0 3 3 2
+  3 xxx 0 2 3 2
+  3 xxx 0 1 3 2
+ 0 1 1 0 9 1 n       !!!!!!!!!!!!! #1  NO LINE
+  3 xxx 0 6 3 2 EXIST. WELL
+ 99 0 0 0 0 0 0  ____________________./ DOT ON LINE END
+
+99 0 0 0 0 0 0     F I R E      H Y D R A N T     .      .
+99 0 0 0 0 0 0                                   {+}    {+}
+99 0 0 0 0 0 0                                   /_\    /_\
+ 0 1 1 0 9 2 n        ! ! ! ! pen#2  ! ! !
+ 3 xxx 0 5 6 2
+ 0 1 1 0 9 1 n       ! ! ! ! pen#1  ! ! !
+ 3 xxx 0 6 4 2  Fire Hydrant Typ.
+
+99 0 0 0 0 0 0  G A T E   V A L V E
+ 0 1 1 0 9 2 n        ! ! ! ! pen#2  ! ! !
+ 3 xxx 0 5 6 2
+ 0 1 1 0 9 1 n       ! ! ! ! pen#1  ! ! !
+ 3 xxx 0 7 0 2
+ 3 xxx 0 7 1 2 Gate Valve Typ.
+==============================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LINES  ______  __ __ __    L I N E  T Y P E S _____ _ _ _____ _ _______
+
+99 0 0 0 0 0 0     oooooooooooo    S T O N E   W A L L   oooooooooooo
+1 xxx xxx 0 10 1 n
+
+99 0 0 0 0 0 0     X---------X---------X   W I R E   F E N C E   X--------X
+1 xxx xxx 0 11 1 n
+
+99 0 0 0 0 0 0    oooooxoooooxooooo  S T O N E    W A L L   W I T H   W I R E
+1 xxx xxx 0 12 1 n
+
+ 99 0 0 0 0 0 0              - - - - - - - - -
+ 99 0 0 0 0 0 0                   DRIVE
+ 99 0 0 0 0 0 0              - - - - - - - - -
+ 1   xxx   xxx  0  6  1 N
+ 7 xx xx xx xx xx N
+
+99 0 0 0 0 0 0     _______________________
+99 0 0 0 0 0 0
+99 0 0 0 0 0 0         EDGE OF PAVEMENT
+99 0 0 0 0 0 0     _______________________
+ 1 xxx xxx 0 0 1 N
+ 7 xx xx xx xx xx N
+
+99 0 0 0 0 0 0                          n_________
+99 0 0 0 0 0 0                         /___/\___ /\   B U I L D I N G
+99 0 0 0 0 0 0                        _|_"_HH_"_|"|_
+ 1 xxx xxx 0 0 2 N                    ~~~~~~~~~~~~~~
+ 5 xxx xxx 0 0 2 N
+
+99 0 0 0 0 0 0             #####   LEDGE OUTCROP   #######
+ 8 xx xx xx 8 0 N
+ ##### //
+ 8 xx xx xx 8 0 N
+ ### //
+ 8 xx xx xx 8 0 N
+ ### //
+
+DLINE ==========  S E T   D O U B L E   L I N E  =======================
+
+           99 0 0 0 0 0     ================ DOUBLE LINE
+           16 -1 4 0 0 0
+           1 xxx xxx 0 13 2 N
+
+16 -1 1 0 0 0       =========   RETAINING WALL  =======
+5 xx xx 0 0 2 N
+12 xx xx 1 6 0 BLOCK RET. WALL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HOW    **  **  **  **    H O W   T O   P R O C E D U R E S   **  **  **
+=============================================================================
+99 0 0 0 0 0 0     SET PERP. ANGLE  / / / / /
+ 16 -1 0 xxx 0 0  Set Perp. Angle @ xxx
+
+99 0 0 0 0 0 0   Turn  Off  Sheet Tag  {   }    {   }
+ 16 0 0 0 0 15    Tag   Off
+
+99 0 0 0 0 0 0   Set Markers At Certain Angle
+ 3 0 xxx 0 9 0
+
+99 0 0 0 0 0 0   Set Markers At Certain Angle
+ 3 0 0 4 2 0
+ 0 xxx xxx 3 9 1 n  set marker angle with line
+ 3 xxx 0 4 2 2
+===============================================================================
+87 0 0 0 0 0 0 ****  E N D   O F   L E G E N D   T E M P L A T E  *********
+
+
+
+
+
+
+
+
+
+
+
+

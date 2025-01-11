@@ -1,0 +1,82 @@
+:         P C   -   T U R B O   S U R V E Y   C A D   T E M P L A T E
+___________________________________________________________________________
+
+C      LINE      MULTI    TRAV    MULTI_POLY    ARC      WORDS     DRAW
+                 LINE     LINE      LINE       clock     Plot     MARKER
+O                                               wise    Oriented
+
+M
+
+M      LINE      MULTI    TRAV    TRAV_POLY  DIMENSION   WORDS     SET
+                 LINE     LINE      LINE       LINE      Page     MARKER
+A     Not-Des.  Not-Des. Not-Des.                       Oriented
+
+N
+                                                                    :EXIT:
+D    RECTANGLE RECTANGLE   SHAPE     SHAPE    ELLIPSE     SET
+       Plot      Page      Plot      Page              VARIABLES   to Main
+S    Oriented  Oriented   Oriented  Oriented                        Menu
+___________________________________________________________________________
+
+
+      Cross     Cross    Square    Octagon   Triangle  Double     Circle
+M     Hair      Hair                  _         __     Triangle
+A      +         X         []        <_>        \/      |><|        O
+R
+K
+E
+R    Magnetic    True      NO        Pole      Tree      Tree      Rock
+S      North     North   MARKER              Deciduous Evergreen  Boundary
+     >--+-->                         -O-
+
+M
+A S
+R I    3=.10"   4=.12"     5=.14"    6=.16"    7=.18"    LAST     DEFINE
+K Z                                                      SIZE/   MARK SIZE
+E E                                                     MARKER
+R__________________________________________________________________________
+
+L      Solid     Dotted    Dotted   Dashed    Dashed    Dashed    Dashed
+I      Line        #1        #2       #1        #2        #3        #4
+N      _____     ......    ......  _ _ _ _   __ __ __   ___ ___  ____ ____
+E
+
+T
+Y    Property  Property  Center/  Wide Space   Stone    Fence     Fence/
+P       #1        #2     Street      Dash      Wall     Line    Stone Wall
+E   -- - --  --- - --- --- - - ---  -  -  -   ooooooo  --x--x-- oooXooXooo
+S
+___________________________________________________________________________
+
+C S
+H I   10=.10"  12=.12"    14=.14"   16=.16"   18=.18"    LAST     DEFINE
+A Z                                                      SIZE    CHAR SIZE
+R E
+___________________________________________________________________________
+
+N
+U       :0         1         2         3         4:        LAST     DEFINE
+M                                                        LOOK      LOOK
+B
+E
+R
+
+P       :5         6         7         8         9:         *         #
+A
+D
+___________________________________________________________________________
+P
+O
+I    Existing  Existing    New    Re-Digitize   CLOSE    END       LAST
+N     Pt.      or New      Pt.       Pt.        Area     Area       Pt.
+T               Pt.                             Loop     Loop    Digitized
+S__________________________________________________________________________
+
+O
+T     NO        YES
+H    Pointer   Pointer
+E
+R __/____________________________________________________________________\_
+    \                                                                    /
+
+

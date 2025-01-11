@@ -1,0 +1,768 @@
+                  L I N E - F I L E   S E T U P   S W I T C H S
+                  =============================================
+
+
+  * > The First Line of All Line Files Contains The Following Information < *
+  * >      NOTE: All the following information must be on " ONE LINE "    < *
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       Border  Scale   Rotation  Offset_X  Offset_Y  Grid  Line_Ends
+       ======  =====   ========  ========  ========  ====  =========  cont.>
+        1/0   10..200   0..360     Feet      Feet     0/1    0/1/2
+
+
+       Pt#_Label  Legend  Start_Pt#                   Window
+       =========  ======  =========  ======================================
+         0/1/2     0..8    1..#pts   Nrth Low, Est Low, Nrth High, Est high
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ A typical Set_Up line Would look like this:
+
+ 0  100  135 -300  150    1   2  2     3    001     8500  11750  9100 13700
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ _ Boarder    Enter { 1 } to Draw a Boarder on all sides. { uses pen #2 }
+              Enter { 0 } for no Boarder.
+
+ _ Scale      Your Plot will have a scale of:
+              1 inch = the number of Units entered into this Field.
+              for example Scale of 40 equals  1 inch = 40 Feet.
+
+ _ Rotation   This field Rotates the entire plot " COUNTER CLOCKWISE "
+              by the Degrees you specify here.
+
+ _ Offset_X   This Moves the entire Plot in the " X " Direction.
+              A minus Number moves the plot to the RIGHT.
+              A plus Number moves the plot to the LEFT.
+              The Number Specified is interpreted by the computer
+              to be in " FEET " of the scale previously specified.
+              If your scale is 40 and Offset_X is 200 the plot
+              moves 5 inches to the left.
+              [ <------ plus ]                  [ minus -------> ]
+
+
+ _ Offset_Y   This Moves the entire Plot in the " Y "     plus      minus
+              Direction. A minus Number moves the plot      |         ^
+              UP the Sheet. A plus Number moves the         v         |
+              plot DOWN the Sheet. The Number Specified     |         ^
+              is interpreted by the computer to be in       v         |
+              " FEET " of the scale previously specified.   |         ^
+              If your scale is 100 and Offset_Y is 500      v         |
+              the plot moves 5 inches DOWN the sheet.
+
+
+                              ***  CONTINUED  ***
+
+
+
+
+
+                                     ( 1 )
+
+
+
+
+
+
+
+
+                  L I N E - F I L E   S E T U P   S W I T C H S
+                  =============================================
+
+                                * > CONINUED < *
+
+ _ Grid       This field Togles the Grid on and off.
+              A { 1 } here has the plotter put a grid on the sheet.
+              Each line will be 5 times the scale apart. a scale of
+              30 puts a grid on the sheet that is 150' apart.
+              A { 0 } in this field shuts off grid.
+
+ _ Line_Ends  There are three settings for this field:
+
+              A { 0 } shuts off line ends until you reset them
+              with a " 3 "  or  " 16 "  command. ---------------
+
+              A { 1 } sets a cross hair as the line end -------+
+
+              A { 2 } sets a dot as the line end --------------o
+
+
+ _ Pt#_Label  There are three settings for this field:
+
+              A { 0 } Shuts off point labels. You can not turn
+              them on in the line commands.
+
+              A { 1 } Plots every point in the file and puts the
+              point number next to it or the elevation is printed.
+
+              A { 2 } Plots only DESIGNATED Points. This means the
+              points that are specified using Line Commands starting
+              with a Designated Code. These Codes are:
+              1, 2, 3, 5, and 7
+
+ _ Legend     This Field lets you Specify where the Legend is Printed
+              on the Sheet.
+
+              A { 0 } Specifies no Legend to be Printed.
+
+              A { 1, 2, 3, ....7, 8 } Specifies a certain location
+              on the Sheet ------------------->   Legent Positions
+                                                 +-----------------+
+              A { 9 } Turns Legend Position      | 1      2      3 |
+              Control over to the " 16 "         | 4             5 |
+              Command.                           | 6      7      8 |
+              16 0 XXX YYY 0 15  0               +-----------------+
+              100=1" in both directions.
+              X's Represent Horizantal Position.
+              Y's Represent Vertical Position.
+
+ _ Start_Pt#  This Field allows you to Specify which point in the file
+              you want the plot to start from. All previous points in
+              the file will be disregarded.
+
+
+
+
+                                     ( 2 )
+
+
+
+
+
+
+
+
+                  L I N E - F I L E   S E T U P   S W I T C H S
+                  =============================================
+
+
+
+ _ Window     This Field Specifies The Limits of the plot with regard
+              to a Range in the North - South Direction and a Range in
+              the East - West Direction. First the lower Limits are
+              set for both, then the Upper Limits.
+
+
+                                      Window
+                       ======================================
+                       Nrth Low, Est Low, Nrth High, Est high
+
+                                                             Window
+ 0  100  135 -300  150    1   2  2     3    001   { 8500  11750  9100 13700 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                     ( 3 )
+
+
+
+
+
+
+
+
+                    D R A W I N G   C O M M A N D   C O D E S
+                    =========================================
+
+ Command   Code             6 Parameters Always
+ =======   ==== ==============================================================
+Draw_Line  0,1    P1#      P2#     Mark_Pos  Line_Type   Pen#    Label_Type
+                1..#pts  1..#pts     0..3      0..15     1..4    A B L P N S
+                                                                   V Z T R
+
+Draw_Arc    2     P1#      P2#     Cen_Pt#   Line_Type   Pen#    Label_Type
+                1..#pts  1..#pts   1..#pts     0..12     1..4    P D I O N T
+
+Draw_Marker 3     P1#    Char_Ang   Size     Marker_#    X-Hair  Char_Label
+                1..#pts   0..360    1..9       0..6      0/1/2    ie (I.P.)
+
+Set_Marker  3    Code   Mark_Slant  Size     Marker_#    Lab-Ang Dummy
+                  0       0..360    1..9       0..6      0..360 off due east
+
+Traverse   4,5  FROM:Pt#  TO:Pt#   Mark_Pos  Line_Type   Pen#    Label_Type
+Line            1..#pts  1..#pts     0/1       0..12     1..4    A B L P N S
+                                                                   V Z T R
+
+
+Multi_Line 6,7    P1#      P2#       P3#        P4#       P5#    Label_Type
+                1..#pts  1..#pts   1..#pts    0..#Pts   0..#pts  A B L P N S
+                                                                   V Z T R
+
+Words       8   WHERE:Pt# DIR:P1#  DIR:P2#   Size:100th POINTER   Word Look
+Plot Oriented   1..#pts  1..#pts   1..#pts   100=1 inch 0..#pts    I U N B
+                Make sure you put a // at the end of the words.
+
+                I=Italic U=Underline B=Box N=None
+
+Words       9   WHERE:Pt# POINTER  ROT_ANG   Size:100th  Dummy    Word Set Off
+Page Oriented   1..#pts   0..#pts  0..360    100=1 inch     0     I U N B S E
+
+                S=Start Pointer   E=End Pointer  Rotation is C.C.W. of X axis
+
+Traverse   10   FROM:Pt#  TO:Pt#   Mark_Pos  Line_Type    Pen#    Label_Type
+PolyLine        1..#pts  1..#pts     0/1       0..8       1..4    Dummy
+                           80 pt polyline Maximun
+
+Multi             P1#      P2#       P3#        P4#        P5#    Label_Type
+Polyline   20   1..#pts  1..#pts   1..#pts    0..#Pts    0..#pts  Dummy
+                1..#pts  1..#pts   1..#pts    0..#Pts    0..#pts  Dummy
+
+                Note: A (-1) triggers ther multi polyline to plot.
+                      All unused Pts. must be padded with zeros
+
+
+
+
+
+
+
+
+                                     ( 4 )
+
+
+
+
+
+
+
+
+                    D R A W I N G   C O M M A N D   C O D E S
+                    =========================================
+
+ Command   Code             6 Parameters Always
+ =======   ==== ==============================================================
+Ellipse    11   END Pt#1  END Pt#2 H/W RATIO Line_type    Pen#    Dummy
+                1..#pts   1..#pts  Percent    0..8        1..4
+
+Dimension  12   FROM:Pt#  TO:Pt#   Dim_type  Char_size  Arr_Type  #'s & Char
+Lines           1..#pts   1..#pts    1/2     100th in.   0/1/2
+                  Dim Type 1 - Letters are parrallel with dim. line.
+                  Dim Type 2 - Letters are Perpendicular to dim. line.
+                  ARRow Type 0 - None      ----
+                             1 - Arrows   <---->
+                             2             ---->
+                             3            <----
+                             4 - Slash    /----/
+                             5             ----/
+                             6            /----
+
+                  ARRow Type=0 with Dim_End=1 will not give Dim_Ends,
+                  you should set ARRow type to 7 or greater,
+                  for this effect.
+
+Rectangle  13   WHERE:Pt# DIR:P1#  DIR:P2#    X-Size    Y-Size    Leave out lines
+Plot Oriented   1..#pts   1..#pts  1..#pts  100=1 inch 100=1 in.  1234 (any or all)
+
+Rectangle  14   WHERE:Pt#  Dummy   ROT_ANG    X-SIZE    Y-SIZE    Leave out lines
+Page Oriented   1..#pts      0     0..360   100=1 inch 100=1 in.  1234 (any or all)
+
+SET VARIABLES
+           16   AT_Scale Pt_Xhair   Dim_Ends  Ln_type     Pen#      Dummy
+                 10-200   0/1/2       0/1      0..12      1..4
+                 At_SCALE is the cur scale that char. are defined;
+                 Dim ends puts a "point to line" at the dim arrows.
+
+           16     Code  Led_Pos_X  Led_Pos_Y  Sheet_Tag  Plot Speed Dummy
+                   0   100=1 inch 100=1 inch    0/1      5-15 in/sec
+
+
+           16     Code Dbl_Ln_Size  Perp_Ang       0          0      Dummy
+                   -1  100=1 inch    0..360
+                   Perp_ANG is for Line Labels Perpendicular drawn with Line,
+                     The angle can be set off due east.
+                   Perp_ANG is the same as Lab_Ang in Set Marker (3) command.
+
+Shape Plot 18   WHERE:Pt# DIR:P1#  DIR:P2#   Size:100th  Variable Shape Name
+Oriented        1..#pts  1..#pts   1..#pts   100=1 inch   real#   ex. square
+
+
+
+
+
+
+
+                                     ( 5 )
+
+
+
+
+
+
+
+
+
+                    D R A W I N G   C O M M A N D   C O D E S
+                    =========================================
+
+ Command   Code             6 Parameters Always
+ =======   ==== ==============================================================
+Shape Page 19   WHERE:Pt#  Dummy   ROT_ANG   Size:100th  Variable Word Set Off
+Oriented        1..#pts      0     0..360    100=1 inch   real#   ex. square
+
+Ignore     86      0         0        0          0          0       Dummy
+Code
+
+Code On    87      0         0        0          0          0       Dummy
+
+Comment    99  Plus rest of line ( do not delete any part of that line )
+Out Code Line
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                     ( 6 )
+
+
+
+
+
+
+
+
+        ******* Q U I C K  *  R E F E R A N C E  *  G U I D E *******
+==============================================================================
+Line_Type                  Markers                    Label_Type
+   0 - Solid        ________  0 - Cross-Hair    +        A - Azmith/Distance
+   1 - Dashed       _ _ _ _   1 - X-Cross       X        B - Bearing/Distance
+   2 - Property     _.._.._.  2 - Square        []       L - Lot Distance
+   3 - Center Line  __.__.__  3 - Octagon      <__>      P - Printed Legent
+   4 - Dotted Line  ........  4 - Triangle      \/       D - Drawing Arc Label
+   5 - C.L.#2   ___.___.___.  5 - Double Tri.  |><|      I - Inner Arc Dim.
+   6 - Dot #2 (longer) .....  6 - Circle        ()       O - Outter Arc Dim.
+   7 - Dash#2    __ __ __ __  7 - Mag.Nt Arrow >--+-->   V - Perpendicular 1
+   8 - Dash#3    ___ ___ ___  8 - True Nt.               Z - Perpendicular 2
+   9 - No Line                9 - No Marker              S - Straight Bear/Dist.
+  10 - Stone Wall oooooooooo 10 - Pole           -O-     N - No Label
+  11 - Fence    --x---x---x- 11 - Tree 1 Deciduous
+  12 - SW & Fence oxoooxooox 12 - Tree 2 Evergreen
+  13 - Double Line ========= 13 - Rock Boundary
+  14 -                       14 -
+  15 -                       15 -
+
+Size                       Point #'s                  Marker_Position
+   0 = 0.04 inches          All Pt# must be              0 - No Marker
+   1 = 0.06"                in the Pt. FIle!!!           1 - Marker @ P1
+   2 = 0.08"                P#'s <= no_pts.              2 -   "    @ P2
+   3 = 0.10"                                             3 -   "    @ P1 & P2
+   4 = 0.12"
+    Ect.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                     ( 7 )
+
+
+
+                               L I N E   T Y P E
+===============================================================================
+
+
+Line_Type         ( For Commands 0, 1, 2, 4, 5, 10, 11, 16 )
+=============================================================
+ 0= Solid           _______________     1= Dashed           - - - - - - - -
+
+ 2= Property        __ .. __ .. __      3= Center Line      __.__.__.__.__.
+
+ 4= Dotted          ...............     5= Center Line #2   ___.___.___.___
+
+ 6= Dotted #2       (Longer).......     7= Dashed #2        ___ ___ ___ ___
+
+ 8= Dashed #3       ____ ____ ____      9= No Line
+
+10= Stone Wall      ooooooooooooooo    11= Fence            ---x---x---x---
+
+12= Stn.Wll. & Fnc. oooxoooxoooxooo    13= Double Line      ===============
+
+14=                                    15=
+
+
+
+_______________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                     ( 8 )
+
+
+
+
+
+
+
+
+
+                             L A B E L   T Y P E
+================================================================================
+
+
+
+Label_Type:    ( For Line Commands 0, 1, 4, 5, 6, and 7 ) | A B L P N S |
+========================================================= |   V Z T R   |
+
+A= Azimuth/Distance, Straddles line.
+B= Bearing/Distance, Straddles line.
+L= Prints Lot Dimension on left side of line.
+P= Prints Bearing/distance to Legend, prints legend # on left side of line.
+N= No Label.                 S= Puts Bearing/Distance on left side of line.
+V= Prints Bearing/Distance Perpendicular to line on left side.
+Z= Prints Bearing/Distance Perpendicular to line on right side.
+T= Puts Label on other side of line in place of S
+R= Adds 180 to Azimuth or Reverses Bearing Direction. AR, BR, SR, VR, ZR
+
+Generally if you want Label on other side of line than what is ploted
+you just have to plot lines in other direction.
+
+
+Label_Type:    ( For Curve Command 2 )             |  P D I O N T  |
+====================================================================
+
+P= Prints Curve Data to Legend, prints Legend # on outside of curve along arc
+D= Prints Curve Data along Radius line
+I= Prints Arc Length on inside of curve along Arc.
+O= Prints Arc Length on outside of curve along Arc.
+N= No Label
+T= Prints Curve Data to Legend, prints Legend # on inside of curve along arc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                     ( 9 )
+
+
+
+
+
+
+
+
+
+                                  C O M E N T S
+================================================================================
+
+Marker Slant stays in effect until next Line Plotted.
+Multi_line will draw Markers if the last line drawn had a Marker Drawn.
+You can turn X-Hair on/off to cross Circle/Squares or to high lite points.
+X-Hair (Line_Ends) on/off is also controlled on the 1st line of the Line file.
+
+Variables Current_Marker & Current_Marker_Size are updated when the
+Marker size changes.  All Line Markers use these variables to drawn the
+line end markers.  You Can change then end markers with the Set_Marker Code.
+
+You May Put comments in the line file after Label_Types,
+   Like  Traverse, Lot Lay Out, Etc.
+
+To Draw Marker using command [6,7] first draw a single line using [0,1]
+and turn draw marker on. (ex. 1 12 13 2 0 1 n)
+
+If you do not wish to draw markers with command codes [6,7] then
+(ex. 1 12 13 0 1 n) before using [6,7].
+
+There is a variable Draw_Marker that is set on the last line drawn using
+command codes [0,1,4,5] not [6,7].
+
+Label Angle (Lab-Ang) is used for labels that are Perpendicular to the line
+being labeled.  If Lab_ang>0 then this angle will be used for these labels
+else it will be perpendicular.  Lab_ang is off the Due East Line.
+
+If you want a Label to be on the other side of a line then plot the
+line in the other direction.
+
+To make thing much easier use comment in the line file to set off blocks
+of lines so that you can find them.
+Also block line together that are related.
+
+Use code 99 to ignore a command that you might want to restore later.
+
+You can make many things happen with this system by THINKING about it,
+This is actually a plotting program language.
+
+Set the orientation of a marker by Marker_slant in Set_marker command
+or draw a line with the proper orientation before Draw Marker command.
+You might use the no_line code.
+The Variable Cur_slant is set either way.  When line are draw with markers
+on the markers will get oriented properly automatically.
+
+
+
+
+
+
+
+
+
+
+
+                                    ( 10 )
+
+
+
+                           H O W     T O    G U I D E
+================================================================================
+ _ Change Pens
+ =============
+ To change pens use the " Pen# " field in Line Codes 0, 1, 2, 4, 5, 10, 11
+ and 16. Pen will change before the line is plotted.
+
+ To change pens for Word Commands Draw a non_line in the vicinity of the
+ Words. For example if the words are plotted at point #54, use it in a
+ line command:
+                   0 54 54 0 9 2 N    *** Set Pen #2 ***
+
+        This draws no line but changes to pen number 2.
+        NOTE: It is a good idea to Note such things in
+        the file for future referance.
+
+
+ _ Toggle Line_Ends on or off
+ ============================
+ To turn off/on line ends use the " X-Hair "  Field in Line Command
+ Draw_Marker 3;  or the " Pt_Xhair " Field in the SET VARIABLES 16
+ Command. For example set a no marker:
+
+                    99 0 0 0 0 0 0      **** Shut off Line ends ***
+                    3 54 0 0 9 0
+
+        This line Draws no marker at point number 54
+        and shuts off line ends. Use 99 Command to put
+        comment in file
+
+ To use 16 command:
+
+                    99 0 0 0 0 0 0      **** Shut off Line ends ***
+                    16 40 0 1 2 1
+
+
+ _ Set Perpendicular Line Labels at a certain angle for neatness
+ ===============================================================
+ When using a  V, Z, & P in the " Label _type " Field of Line Commands
+ 0, 1, 4, 5, 6, & 7, you can set the angle that the label is printed
+ by preceding these commands with a SET VARIABLES 16 command and specify
+ the angle in the " Perp_Ang " Field:
+
+                    99 0 0 0 0 0 0    ***** Set Perp_Angle at 132 cc ***
+                    16 -1 4 132 0 0
+
+        This sets Labels at 132 Deg. Counter Clockwise of Due east of
+        the plot. This will stay in effect until you reset it with a
+        new angle.
+
+ You can accomplish this using the " Set_Marker " command and specify
+ the angle in the " Lab_Ang " Field:
+
+                    99 0 0 0 0 0 0    ***** Set Perp_Angle at 132 cc ***
+                    3 0 0 0 9 132
+
+        This accomplishes the same thing.
+
+                                    ( 11 )
+
+
+
+
+
+
+                           H O W     T O    G U I D E
+================================================================================
+
+ _ To Set Markers at a certain angle
+ ====================================
+ When using the " Draw_Marker " Command you can set a specific slant to
+ the marker using the " Mark_Slant " Field of the " Set_Marker " command.
+ You must precede your " Draw_Marker " commands with the " Set_Marker ":
+
+                     99 0 0 0 0 0 0   *** Set Marker Angle at 132 cc ***
+                     99 0 0 0 0 0 0    *** Set Marker Mon. { Square } ***
+                     3 0 132 4 2 0
+                     99 0 0 0 0 0 0    *** Draw Monuments *******
+                     3 54 0 4 2 2
+
+ You can also use the  Draw_Line { code 0, 1 } or Traverse Line { code
+ 4, 5 } or Traverse Polyline { code 10 }  to set marker slant because
+ using these line commands the marker slant is set automatically relative
+ to the line direction that is drawn. First set the type of marker using
+ the " Set_Marker " Command then draw a line calling for markers in the
+ " Marker_# " field Then use the " Draw_Marker " Command to draw markers
+ at their appropriate Points:
+
+                      99 0 0 0 0 0 0   *** Set Marker Mon. { Square } ***
+                      3 0 0 4 2 0
+                      0 54 55 3 9 1 n *** Set Marker Angle with line 54-55 ***
+
+                      99 0 0 0 0 0 0  *** Draw Monuments *******
+                      3 54 0 4 2 2
+
+        This sets the square as the marker and uses the line
+        orientation of the direction of a line between 54 and
+        55 to set the marker angle.
+
+
+ _ Turn off Sheet Tag
+ ====================
+ When plotting overlays and base sheets you will want to turn off the
+ sheet tag for clarity. To do this use the " SET VARIABLES " command.
+
+                       99 0 0 0 0 0 0  *** Shut Off Sheet Tag ***
+                       16 0 0 0 0 15
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    ( 12 )
+

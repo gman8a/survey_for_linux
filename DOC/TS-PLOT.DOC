@@ -1,0 +1,189 @@
+                  L I N E - F I L E   S E T U P   S W I T C H S
+                  =============================================
+
+Border Scale  Rotation Offset_X Offset_Y Grid Line_Ends Pt#_Label Legent Start_Pt#    Window
+====== =====  ======== ======== ======== ==== ========= ========= ====== ========= ===========
+ 1/0  10..200  0..360    Feet     Feet    0/1   0/1/2     0/1/2    0..8   1..#pts  NL,EL,NU,EU
+                                                   Legent Positions
+Pt#_Label                                        +-----------------+
+0 - No Pt#'s Labeled                             | 1      2      3 |
+1 - All Pt#'s are Labeled                        | 4             5 |
+2 - Designated Pt#'s Labeled   (Codes 1,5,7)     | 6      7      8 |
+                                                 +-----------------+
+Rotation is Counter-Clockwise                   9 = set with 16 command
+Positive X,Y offset will move the drawing toward the Page Origin
+
+Line Ends
+0 - No Line Ends
+1 - + Line Ends
+2 - o Line Ends
+                    D R A W I N G   C O M M A N D   C O D E S
+                    =========================================
+
+ Command   Code             6 Parameters Always
+ =======   ==== ============================================================
+Draw_Line  0,1    P1#      P2#     Mark_Pos  Line_Type    Pen#    Label_Type
+                1..#pts  1..#pts     0..3      0..12      1..4    A B L P D N
+
+Draw_Arc    2     P1#      P2#     Cen_Pt#   Line_Type    Pen#    Label_Type
+                1..#pts  1..#pts   1..#pts     0..12      1..4    P D I O N
+
+Draw_Marker 3     P1#    Char_Ang   Size     Marker_#     X-Hair  Char_Label
+                1..#pts   0..360    1..9       0..6       0/1/2    ie (I.P.)
+
+Set_Marker  3    Code   Mark_Slant  Size     Marker_#     Lab-Ang Dummy
+                  0       0..360    1..9       0..6       0..360 off due east
+
+Traverse   4,5  FROM:Pt#  TO:Pt#   Mark_Pos  Line_Type    Pen#    Label_Type
+Line            1..#pts  1..#pts     0/1       0..12      1..4    A B L P D N
+
+Multi_Line 6,7    P1#      P2#       P3#        P4#        P5#    Label_Type
+                1..#pts  1..#pts   1..#pts    0..#Pts    0..#pts  A B L P D N
+
+Words       8   WHERE:Pt# DIR:P1#  DIR:P2#   Size:100th POINTER   Word Set Off
+Plot Oriented   1..#pts  1..#pts   1..#pts   100=1 inch 0..#pts   I U N B
+                Make sure you put a // at the end of the words.
+
+                I=Italic U=Underline B=Box N=None
+
+Words       9   WHERE:Pt# POINTER  ROT_ANG   Size:100th  Dummy    Word Set Off
+Page Oriented   1..#pts   0..#pts  0..360    100=1 inch     0     I U N B S E
+
+                S=Start Pointer   E=End Pointer  Rotation is C.C.W. of X axis
+
+Traverse   10   FROM:Pt#  TO:Pt#   Mark_Pos  Line_Type    Pen#    Label_Type
+PolyLine        1..#pts  1..#pts     0/1       0..8       1..4    Dummy
+                           80 pt polyline Maximun
+
+Multi             P1#      P2#       P3#        P4#        P5#    Label_Type
+Polyline   20   1..#pts  1..#pts   1..#pts    0..#Pts    0..#pts  Dummy
+                1..#pts  1..#pts   1..#pts    0..#Pts    0..#pts  Dummy
+
+                Note: A (-1) triggers ther multi polyline to plot.
+                      All unused Pts. must be padded with zeros
+
+Ellipse    11   END Pt#1  END Pt#2 H/W RATIO Line_type    Pen#    Dummy
+                1..#pts   1..#pts  Percent    0..8        1..4
+
+Dimension  12   FROM:Pt#  TO:Pt#   Dim_type  Char_size  Arr_Type  #'s & Char
+Lines           1..#pts   1..#pts    1/2     100th in.   0/1/2
+                  Dim Type 1 - Letters are parrallel with dim. line.
+                  Dim Type 2 - Letters are Perpendicular to dim. line.
+                  ARRow Type 0 - None      ----
+                             1 - Arrows   <---->
+                             2             ---->
+                             3            <----
+                             4 - Slash    /----/
+                             5             ----/
+                             6            /----
+
+                  ARRow Type=0 with Dim_End=1 will not give Dim_Ends,
+                  you should set ARRow type to 7 or greater,
+                  for this effect.
+
+Rectangle  13   WHERE:Pt# DIR:P1#  DIR:P2#    X-Size    Y-Size    Leave out lines
+Plot Oriented   1..#pts   1..#pts  1..#pts  100=1 inch 100=1 in.  1234 (any or all)
+
+Rectangle  14   WHERE:Pt#  Dummy   ROT_ANG    X-SIZE    Y-SIZE    Leave out lines
+Page Oriented   1..#pts      0     0..360   100=1 inch 100=1 in.  1234 (any or all)
+
+SET VARIABLES
+           16   AT_Scale Pt_Xhair   Dim_Ends  Ln_type     Pen#      Dummy
+                 10-200   0/1/2       0/1      0..12      1..4
+                 At_SCALE is the cur scale that char. are defined;
+                 Dim ends puts a "point to line" at the dim arrows.
+
+           16     Code  Led_Pos_X  Led_Pos_Y  Sheet_Tag  Plot Speed Dummy
+                   0   100=1 inch 100=1 inch    0/1      5-15 in/sec
+
+
+           16     Code Dbl_Ln_Size  Perp_Ang       0          0      Dummy
+                   -1  100=1 inch    0..360
+                   Perp_ANG is for Line Labels Perpendicular drawn with Line,
+                     The angle can be set off due east.
+                   Perp_ANG is the same as Lab_Ang in Set Marker (3) command.
+
+Shape Plot 18   WHERE:Pt# DIR:P1#  DIR:P2#   Size:100th  Variable Shape Name
+Oriented        1..#pts  1..#pts   1..#pts   100=1 inch   real#   ex. square
+
+Shape Page 19   WHERE:Pt#  Dummy   ROT_ANG   Size:100th  Variable Word Set Off
+Oriented        1..#pts      0     0..360    100=1 inch   real#   ex. square
+
+Ignore     86      0         0        0          0          0       Dummy
+Code
+
+Code On    87      0         0        0          0          0       Dummy
+
+Comment    99  Plus rest of line ( do not delete any part of that line )
+Out Code Line
+
+
+Line_Type                  Markers                    Label_Type
+   0 - Solid        ________  0 - Cross-Hair    +        A - Azmith/Distance
+   1 - Dashed       _ _ _ _   1 - X-Cross       X        B - Bearing/Distance
+   2 - Property     _.._.._.  2 - Square        []       L - Lot Distance
+   3 - Center Line  __.__.__  3 - Octagon      <__>      P - Printed Legent
+   4 - Dotted Line  ........  4 - Triangle      \/       D - Drawing Arc Label
+   5 - C.L.#2   ___.___.___.  5 - Double Tri.  |><|      I - Inner Arc Dim.
+   6 - Dot #2 (longer) .....  6 - Circle        ()       O - Outter Arc Dim.
+   7 - Dash#2    __ __ __ __  7 - Mag.Nt Arrow >--+-->   V - Perpendicular 1
+   8 - Dash#3    ___ ___ ___  8 - True Nt.               Z - Perpendicular 2
+   9 - No Line                9 - No Marker              S - Straight Bear/Dist.
+  10 - Stone Wall oooooooooo 10 - Pole           -O-     N - No Label
+  11 - Fence    --x---x---x- 11 - Tree 1 Deciduous
+  12 - SW & Fence oxoooxooox 12 - Tree 2 Evergreen
+  13 - Double Line ========= 13 - Rock Boundary
+  14 -                       14 -
+  15 -                       15 -
+
+Size                       Point #'s                  Marker_Position
+   0 = 0.04 inches          All Pt# must be              0 - No Marker
+   1 = 0.06"                in the Pt. FIle!!!           1 - Marker @ P1
+   2 = 0.08"                P#'s <= no_pts.              2 -   "    @ P2
+   3 = 0.10"                                             3 -   "    @ P1 & P2
+   4 = 0.12"
+    Ect.
+
+Marker Slant stay in effect until next Line Plotted.
+Multi_line will draw Markers if the last line drawn had a Marker Drawn.
+You can turn X-Hair on/off to cross Circle/Squares or to high lite points.
+X-Hair (Line_Ends) on/off is also controlled on the 1st line of the Line file.
+
+Varables Current_Marker & Current_Marker_Size are updated when the
+Marker size changes.  All Line Markers use these variables to drawn the
+line end markers.  You Can change then end markers with the Set_Marker Code.
+
+You May Put comments in the line file after Label_Types,
+   Like  Traverse, Lot Lay Out, Ect.
+
+To Draw Marker using command [6,7] first draw a single line using [0,1]
+and turn draw marker on. (ex. 1 12 13 2 0 1 n)
+
+If you do not wish to draw markers with command codes [6,7] then
+(ex. 1 12 13 0 1 n) before using [6,7].
+
+There is a variable Draw_Marker that is set on the last line drawn using
+command codes [0,1,4,5] not [6,7].
+
+Label Angle (Lab-Ang) is used for labels that are Perpendicular to the line
+being labeled.  If Lab_ang>0 then this angle will be used for these labels
+else it will be perpendicular.  Lab_ang is off the Due eEast Line.
+
+If tyou want a Label to be on the other side of a line then plot the
+line in the other direction.
+
+To make thing much easier use comment in the line file to set off blocks
+of lines so that you can find them.
+Also block line together that are related.
+
+Use code 99 to ignor a command that you might want to restore later.
+
+You can make many things happen with this system by THINKING about it,
+This is actually a plotting program langauage.
+
+Set the orentation of a marker by Marker_slant in Set_marker command
+or draw a line with the proper orientation before Draw Marker command.
+You might use the no_line code.
+The Variable Cur_slant is set either way.  When line are draw with markers
+on the markers will get oriented properly automatically.
+
