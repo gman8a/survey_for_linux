@@ -1,0 +1,8 @@
+Multi Line/Point
+rfnr31 {Enter Starting Point of BASE Line ? }pt
+
+31 {Enter Direction of BASE Line ? }--
+
+
+lb1lp31 {Enter POINT off base line ? }pt
+31 uujp1  

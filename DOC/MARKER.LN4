@@ -1,0 +1,339 @@
+0 43  0 -100 -100  0 0 0 0  001   740 1000   1000 1000
+
+16 0 0 0 0 5 n pen speed
+
+3 1 0   5  0  0   WITtness / STK = STaKe
+
+3 2 0   5  1  0   ACM ARIAL Control Marker
+
+3 3 0   5  2  1   MON  Monument Typical
+  1 3 3 0 0 1 n
+
+3 4 0   6  3  2   FP  Fence Post
+  1 4 4 0 0 1 n
+
+3 5 0   7  4  1   TV  TraVerse (control only)
+  1 5 5 0 0 1 n
+
+3 6 0   5  4  2   HT  HUB & Tack or PK/SPK nail
+  1 6 6 0 0 1 n
+
+3 7 0  5  6   1   DH  Drill Hole
+  1 7 7  0 0 1 n
+
+3 8 0   5  6  0   PIPE
+  3 8 0   2  6  0
+
+3 9 0   5  6  2   IP  Iron Pin
+  1 9 9 0 0 1 n
+
+3 10 0  5  9  1   GS  Ground Shot or No Marker
+  1 10 10 0 0 1 n
+
+3 11 0  6 10  0   POLe UI WT CLP SNET
+
+3 12 0  8 11  0   DT  Deciduous Tree
+
+3 13 0  9 12  0   ET  Evergreen Tree
+
+3 14 0  9 13  0   RB  SB  Rock/Stone Boundary
+
+3 15 0  5  2  0   TP  Test Pit or deep hole
+  3 15 0 7 0 0
+
+3 16 0  5  6  0   PERK test
+  3 16 0 7 0 0
+
+3 17 0  5  6  0   FH FHYD Fire Hydrant
+  3 17 0 5 4 2
+  1 17 17 0 0 1
+
+3 18 0  5  2  0   CB  Catch Basin
+  3 18 0  5  0  0
+  3 18 0  5  1  0
+
+3 19 0  6  6  0   MH  Man Hole
+  3 19 0 4 6 0
+
+3 20 0  5  6  0   GV  Gas Valve
+  3 20 0 5 1 0
+
+3 21 0  6  5  0   WV  Water Valve
+  3 21 0 5 6 0
+
+3 22 0  6  6  0   WEL water WELL
+9 22 0 0 9 0 n
+W//
+
+3 23 0  6  5  2   LP  Light Pole
+  3 23 0 2 6 0
+
+3 24 0  4  6  0   GP  Guy Pole
+9 24 0 0 8 0 n
+__//
+
+3 25 0  4  6  0   GA GW  Guy Anchor/Wire
+9 25 0 0 11 0 n
+T//
+
+3 26 0  6  2  0   CHD Conn Highway Dept. Mon.
+  3 26 0 2 6 1
+  1 26 26 0 0 1 n
+
+3 1 0 5 9 0
+1 1 1 0 0 2 n change pens
+
+9 01 0 180 11 0 n
+0  //
+9 02 0 180 11 0 n
+1  //
+9 03 0 180 11 0 n
+2  //
+9 04 0 180 11 0 n
+3  //
+9 05 0 180 11 0 n
+4  //
+9 06 0 180 11 0 n
+5  //
+9 07 0 180 11 0 n
+6  //
+9 08 0 180 11 0 n
+7  //
+9 09 0 180 11 0 n
+8  //
+9 10 0 180 11 0 n
+9  //
+9 11 0 180 11 0 n
+A  //
+9 12 0 180 11 0 n
+B  //
+9 13 0 180 11 0 n
+C  //
+9 14 0 180 11 0 n
+D  //
+9 15 0 180 11 0 n
+E  //
+9 16 0 180 11 0 n
+F  //
+9 17 0 180 11 0 n
+G  //
+9 18 0 180 11 0 n
+H  //
+9 19 0 180 11 0 n
+I  //
+9 20 0 180 11 0 n
+J  //
+9 21 0 180 11 0 n
+K  //
+9 22 0 180 11 0 n
+L  //
+9 23 0 180 11 0 n
+M  //
+9 24 0 180 11 0 n
+N  //
+9 25 0 180 11 0 n
+O  //
+9 26 0 180 11 0 n
+P  //
+
+9 28 0 0 18 0 iu
+MARKERS (Code #0-#P)//
+
+14 29 0 0 375 670
+
+1 1 1 0 0 1 n change pens
+
+9 01 0 180 11 0 n
+#   //
+9 02 0 180 11 0 n
+#   //
+9 03 0 180 11 0 n
+#   //
+9 04 0 180 11 0 n
+#   //
+9 05 0 180 11 0 n
+#   //
+9 06 0 180 11 0 n
+#   //
+9 07 0 180 11 0 n
+#   //
+9 08 0 180 11 0 n
+#   //
+9 09 0 180 11 0 n
+#   //
+9 10 0 180 11 0 n
+#   //
+9 11 0 180 11 0 n
+#   //
+9 12 0 180 11 0 n
+#   //
+9 13 0 180 11 0 n
+#   //
+9 14 0 180 11 0 n
+#   //
+9 15 0 180 11 0 n
+#   //
+9 16 0 180 11 0 n
+#   //
+9 17 0 180 11 0 n
+#   //
+9 18 0 180 11 0 n
+#   //
+9 19 0 180 11 0 n
+#   //
+9 20 0 180 11 0 n
+#   //
+9 21 0 180 11 0 n
+#   //
+9 22 0 180 11 0 n
+#   //
+9 23 0 180 11 0 n
+#   //
+9 24 0 180 11 0 n
+#   //
+9 25 0 180 11 0 n
+#   //
+9 26 0 180 11 0 n
+#   //
+
+
+
+99 0 0 0 0 0  0   ............    L I N E   T Y P E  .............
+
+16 -1 3 0 0 0 n set dbl size
+
+1 51 71 0 0 1 n
+1 52 72 0 1 1 n
+1 53 73 0 2 1 n
+1 54 74 0 3 1 n
+1 55 75 0 4 1 n
+1 56 76 0 5 1 n
+1 57 77 0 6 1 n
+1 58 78 0 7 1 n
+1 59 79 0 8 1 n
+1 60 80 0 9 1 n
+1 61 81 0 10 1 n
+1 62 82 0 11 1 n
+1 63 83 0 12 1 n
+1 64 84 0 13 1 n
+
+9 71 0 0 11 0 n
+  Property Line / EOP//
+9 72 0 0 11 0 n
+  Gravel/Dirt Drives//
+9 73 0 0 11 0 n
+  Wetland Flags/Ponds//
+9 74 0 0 11 0 n
+  Street Lines//
+9 75 0 0 11 0 n
+  Soil Lines//
+9 76 0 0 11 0 n
+  P/L other than Ours//
+9 77 0 0 11 0 n
+  Road Center Lines//
+9 78 0 0 11 0 n
+   2' Contour Lines//
+9 79 0 0 11 0 n
+  10' Contour Lines//
+9 60 0 0 11 0 n
+* END LINE *  Stops Ref. Lines//
+9 81 0 0 11 0 n
+  C/L Stone Walls//
+9 82 0 0 11 0 n
+  C/L Fences//
+9 83 0 0 11 0 n
+  C/L S/Wall & Fence//
+9 84 0 0 11 0 n
+  Dbl.Line Pipes/Curb//
+
+9 94 0 0 11 0 n
+Line Reference No. 0 1 2 3 4 5 6 7
+Alternate Symbols  + - = / . O X Y
+Default Line Types 0 1 2 3 4 A B C
+Change Default LTs by coding Ref#:LT
+ex  1A   =1    +D    31   70   Y3
+
+Line:Markers use a 2 digit Line Code
+ex  + DH  101"IP   0# DH   X 1"PIPE
+
+Markers beginning with numbers 0-9
+ex  ##1"IP    # 1"IP    IP 1"
+
+END LINE CODE '9' or 2 Alt. Symbols
+ex   19  39  =9  +9  ++  ==  OO  --
+
+8 Lines can be run simultaneously.
+Markers can be shot concurrently.
+Line Type code 0-D are NOT required.
+CODED Markers use a PREFIX code '#'.
+//
+
+3 1 0 5 9 0
+1 1 1 0 0 2 n change pens
+
+9 51 0 180 11 0 n
+0  //
+9 52 0 180 11 0 n
+1  //
+9 53 0 180 11 0 n
+2  //
+9 54 0 180 11 0 n
+3  //
+9 55 0 180 11 0 n
+4  //
+9 56 0 180 11 0 n
+5  //
+9 57 0 180 11 0 n
+6  //
+9 58 0 180 11 0 n
+7  //
+9 59 0 180 11 0 n
+8  //
+9 60 0 180 11 0 n
+9  //
+9 61 0 180 11 0 n
+A  //
+9 62 0 180 11 0 n
+B  //
+9 63 0 180 11 0 n
+C  //
+9 64 0 180 11 0 n
+D  //
+
+9 90 0 0 18 0 iu
+LINES (Ref.No. 0-7)//
+
+14 92 0 0 375 670
+
+1 1 1 0 0 1 n change pens
+
+9 51 0 180 11 0 n
+L   //
+9 52 0 180 11 0 n
+I   //
+9 53 0 180 11 0 n
+N   //
+9 54 0 180 11 0 n
+E   //
+9 55 0 180 11 0 n
+    //
+9 56 0 180 11 0 n
+R   //
+9 57 0 180 11 0 n
+E   //
+9 58 0 180 11 0 n
+F   //
+9 59 0 180 11 0 n
+E   //
+9 60 0 180 11 0 n
+R   //
+9 61 0 180 11 0 n
+E   //
+9 62 0 180 11 0 n
+N   //
+9 63 0 180 11 0 n
+C   //
+9 64 0 180 11 0 n
+E   //
+
+

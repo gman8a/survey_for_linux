@@ -1,0 +1,10 @@
+do EASY Rotation
+rs
+rot1
+rs
+rot2
+ ifa11 =15 rt11 12 13 13 p
+
+ynel~Art11 12 13 14 p
+
+ynei~1  

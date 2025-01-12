@@ -1,0 +1,838 @@
+
+
+
+
+
+   -------------------------------------------------------------------
+                               PC-TS
+                            TURBO SURVEY
+   -------------------------------------------------------------------
+
+
+                        by Gary L. Argraves
+                    Copyright 1986, CompuRight
+                        All rights reserved
+
+
+Customer Service:
+    If you have any problems using PC-TS, or would like to inquire
+    about our other Civil engineering software systems such as,
+    Beamer (beam analysis with deflection calculations), Framer
+    (multistory-multibay rigid frame analysis), Truss Master
+    (analysis of trusses including complex and compound trusses),
+    Manchz (solutions for Manning's and Chezy's formulas), and Matrix
+    Master (solution of simultaneous equations), please contact:
+
+                          CompuRight
+                          97 Hill Street
+                          Shelton, CT  06484
+                          (203) 732-4721
+
+
+
+
+
+Overview of PC Turbo Survey:
+
+    PC Turbo survey (PC-TS) is an IBM XT computer based program that
+    will greatly increase the productivity of land surveyors and land
+    development engineers. PC-TS is based around a coordinate
+    geometry system. The system incorporates new methods for handling
+    data input from the user making data entry easy and
+    comprehendable even by an inexperienced technician.
+
+    All input data is retained by the computer for editing or
+    modification as desired. The system will automatically reduce
+    field notes to XYZ coordinates. The user can enter azimuths,
+    horizontal angles (left or right), or bearing as desired.
+    Automatic horizontal distances are calculated for slope
+    distances, rod shot distances or EDM distances. Traverse loops
+    are balanced using the compass method. The balance procedure also
+    balances vertical data in a closed loop. Vertical and horizontal
+    calculations are done with two separate processes allowing the
+    user to complete horizontal calculations and at another time
+    enter vertical data to comput elevations of points.
+
+    A full feature plotting system is available which produces fast
+    accurate plots. The plot system has 16 commands with 12 different
+    line types 15 different symbol types, automatic line labeling,
+    automatic legend, shape building capabilities, full featured text
+    manipulation, digitizing link, and more! Area calculations are
+    accomplished using three methods of data input, area point file,
+    key board input, and digitizer input.  Another major feature is
+    auto point find; this means if you digitize a point and that
+    point exists in the point file then the actual coordinates of
+    that point are used rather than the approximate point coordinates
+    that the digitizer delivers to the system.
+
+Coordinant geometry functions include:
+
+    1. Line line intersection. 2. Line arc intersection. 3. Arc arc
+    intersection. 4. Line point intersection (perpendicular). 5.
+    Offset (find intersection of lines offset from two other known
+    lines). 6. Line arc tangent. 7. Point point (inverse).
+
+    Another function is a radial stake out. This funtion allows you
+    to set up at any point, back sight any other point, and then
+    enter points to be staked out.
+
+Hardware specifications:
+
+    IBM PC computer system or compatable system with 256 K RAM, color
+    or monochrome monitor, one floppy disk drive and one printer.
+    PC-TS is configured for use with a Houston Instruments DMP-52
+    plotter and a Houston Instruments large digitizer pad.
+
+Software specifications:
+
+    MS-DOS operating system, an editing system i.e. Sidekick (many
+    good screen editors are available in the public domain), and a RAM
+    disk system i.e. VDISK (a memory emulated disk drive).
+
+Prefered system:
+
+   IBM PC computer system with extended memory, one floppy drive, one
+   hard drive, one printer and two communication ports (one for a
+   Houston instruments plotter and one for a Houston Instruments
+   large digitizing pad).  An editing system is necessary to run
+   PC-TS.  Many good editing systems exist and the user can make his
+   own choice however, the preferred editor is the Sidekick editor by
+   Borland Inc. because of its abilty to interact simultaneously with
+   any applications program system.
+
+System configuration file (config.sys):
+
+   PC-Turbo Survey requires a Ram drive.  This is accomplished by
+   entering the following line in the system CONFIG.SYS file.
+   VDISK.SYS is a RAM disk driver that is on MS DOS 3.0 and greater
+   versions.  This file should be located in the root directory of
+   the boot disk so that CONFIG will find it with the following
+   config entries: (If you are running DOS 2.1 and do not have
+   VDISK.SYS then use the ramdisk programs supplied on the PC-TS
+   distribution disk instead of VDISK.SYS)
+
+   1. hard disk & floppy disk system CONFIG.SYS entry
+   device=vdisk.sys 64
+
+or if you use the RAM disk program supplied with PC-TS
+
+   device=rdisk.sys
+
+Note: vdisk.sys will work on a 2.0 versions system
+
+Printer Setting:
+
+   Your the printer should be set for the condensed print mode.  A
+   program is on the disk for setting Epson printer and compatable
+   printers for the condensed print mode.  To set your Epson printer
+   to the condensed print mode, at the MS DOS prompt type PRNSET
+   <RETURN>.
+
+Installation:
+
+   To install PC-TS onto your hard disk, boot the system, insert the
+   PC-TS diskette into the A drive, log the A drive by typing A:
+   <RETURN>, and then type HDINST <RETURN>. For a floppy disk system
+   first boot your computer with a MS DOS operating system (2.1 or
+   greater), then insert PC-TS into the B drive and log the B drive
+   by typing B: <RETURN> and then type FLOPINST <RETURN>.
+
+To start PC-TS:
+
+   Type TS filename  <RETURN>
+   (for example TS newyork <RETURN>)
+
+List of some of the options and explainations:
+
+     There are seven main menus that are activated by pressing the F1-F7 keys.
+     These menus contain all the options of the system.
+     Each menu has a help screen that can be viewed by pressing the F10 key
+     while the menu is displayed.  These help screens are in the file
+     HELP.DOC.  This file must be on the disk for help to work.
+     The following is the HELP.DOC file.  You may customize the help to your
+     particular descriptions of the functions.
+
+POINT INPUT OPERATIONS::
+AD - Add points to file, Full control of point data input.
+ED - Edit an existing point in the point file.
+IN - Insert a point into the file. Insert will shift points down in the file.
+     The From_pt and BS_pt of the shifted points are modified as required.
+     Insert is used if you leave out a leg of a traverse or map boundary.
+EL - Modify existing point elevation without changing the rest of the point
+     data record.  If you have recorded field Delta elevation then use the
+     SEtting command to modify elevation using delta information.
+TP - ToPo data input.  Much like Side Shot (SS) except the rod reading is
+     entered so that the elevation can be calculated.  Also you must exit
+     TP to modify the FROM:Pt# and BS:Pt.  This makes the data entry faster.
+SS - Side Shot.  Quick method of adding horizontal point data.  Use Side
+     Shot instead of ADD.
+MC - Map Check.  Quick method of adding horizontal point data from a boundary
+     map.  The from point and back sited point will automatically advance.
+     You may enter the distance with the letter 'H' to Hold the From point.
+GP - Get Points. To get a range of data points from another point file
+     and append these points to the current logged file.
+AM - Append Move.  To append blank point data to the point file and also
+     to move a block of existing points in the point file.  You may append
+     points so that a group of points will get numbered as desired.
+     Note: Do not append large blocks of blank points with no intention
+     of using them.
+RE - REvise data in existing point records, You may revise the FROM:Pt#,
+     BS:Pt#, Setup, Description, and the rod shot.  This option is used if
+     many point are entered with the wrong data.
+QS - QuickShot is like Side Shot except you can not control then FROM:pt#
+     and the BS:Pt#.
+
+COORDINATE GEOMETRY FUNCTIONS::
+LL - Line Line intersection. Each line is defined by a starting point and
+     a direction from that point number.
+LP - Line point intersection.  This option finds the point of intersection
+     of two lines one of which is perpendicular to the other and intersects
+     the point.
+LA - Line arc intersection. Finds the intersection points of a given line
+     with a given arc.
+LT - Line arc tangent. Finds a line tangent to a given arc and intersecting
+     a given point.
+AA - Arc arc intersection.  Finds intersection points of two given arcs.
+PP - Point to point (inverse). Finds distance and bearing between two
+     known points.
+OF - Offset point. Finds the intersection of two lines that are parallel to
+     two known lines. An offset distance (left or right) from each known line
+     is required.
+
+CALCULATION PROCEDURE::
+AN - Angle math. This function adds and subtracts azimuths and bearings.
+     The sum total will always be less than 360.
+CU - Curve calculations. This function solves for unknown variables of
+     a simple curve given two of the following; radius, delta, length,
+     tangent, and long chord.
+CC - Compare Coordinates.  Used to compare Northing and Easting point
+     coordinates.  This is useful if you are working with another person's
+     map and your own field data.
+AR - Area Calculation.  This function calculates the area of a known point
+     loop.  You may traverse curves and lines.  Three data input methods
+     types can be chosen (keyboard input, disk-file input, and digitizer
+     input).
+SO - Stake Out.  Used to do radial state out of given points from a given
+     point Back sight to another given point.  Use the <PrtScr> key to
+     send the output data to the screen.
+ST - STation on curves.  This function will calculate and add stations points
+     around a curve to the point file.  Before using STation you must have
+     found the PT, PC, Center point of the curve.  You may enter the station
+     increment (50,100) and the offset distance from the PC.
+VC - Vertical Curve.  Finds the elevation along a vertical curve given the
+     PVC, PVT, Grade#1, Grade#1, PVI elevation.
+FW - Find Window.  Finds the maximum & minimum northing and easting limits
+     of a range of coordinates.  Used mostly to to find display window limits
+     for plotter setup parameters.
+
+POINT COORDINATE MODIFICATION PROCEDURES::
+RT - Rotate Translate.  This function rotates points about a given point
+     using a given counter clockwise rotation angle.  Also Translation of
+     a point range may be accomplished simultaneously. You may accomplished
+     each function without the other.  After point rotation/translation is
+     complete the points are protected (negative From_pt).
+BA - Balance Traverse.  Balances a closed loop of traverse points using the
+     compass rule.  Refer to MANUAL.DOC for more data.  All traverse point
+     must have the SETUP option set to YES and all consecutive traverse
+     points must come from the preceding traverse point.
+
+POINT DATA OUTPUT FUNCTIONS::
+PR - PRint points coordinates and other point info to the printer.
+TA - TAg printer page. Prints a Time, date, and File name tag to the printer.
+BR - Browse point.  Used to look at point data on the screen. Four points
+     are displayed at once.  You may use the cursor keypad to control point
+     display.  Active keys are ESC, HOME, END, PgUp, PgDw, ArrowUp ArrowDown.
+TO - TOggle printer on and off.  All functions that print data are linked to
+     a printer ON/OFF variable.  If you do not want printer output then TOggle
+     the printer off.  The state of this variable is displayed at the bottom
+     of the screen (PRT:TRUE).  Printer Off is a good state while adjusting
+     Lot area sizes in conjunction with Area (AR) file input mode.
+PL - PLot points using the line file.  (See manual for more info.) This
+     option invokes the interpretation of a line file (user created) to
+     make a plotted image of the point file.  This is a very powerful plotting
+     system and will require some time and practice to understand. However
+     the plot system is simple in nature so that you may make a plot for your
+     very first job.
+DX - DXf file creation.  This function will created a file that is compatible
+     with AUTOCAD.  AUTOCAD can read coordinate pairs in from this file and
+     you may use function of AUTOCAD to make a drawing.
+
+DIGITIZER FUNCTIONS::
+SD - Set Digitizer.  Use to set a sheet on the digitizing pad. Proper
+     orientation of a sheet is first required so that digitized
+     coordinates can be utilized.  You can orient the sheet by using grid
+     on the sheet or by using two known points on the sheet.
+DA - Digitizer Add. Used to add a serious of points to the point file from
+     the digitizing pad.  The Set Digitizer (SD) function must have been
+     used prior to using the Digitizer Add (DA) function.
+MS - Make Shape.  This is an advance function that is used to get
+     coordinate pairs from the digitizer for the purpose of producing a
+     shape file for the plot function.  The coordinate pairs are stored
+     in a shape file in ASCII form.  This shape file is then loaded into
+     an editor and Plot line drawing commands are build around the pairs
+     to produce a shape that can be draw.  (See Manual for more info).
+
+PROTECT FUNCTIONS:
+PC - Protect Coordinates.  Negates From point.  A negative or zero from point
+     will protect the coordinates from being modified by the dynamic system.
+UC - Unprotect Coordinates.  Will set the From point positive and allow the
+     coordinates to be modified by the recalculation dynamics.
+PE - Protect Elevation.  Negates Rod Shot.  A negative or zero rod shot
+     will protect the elevation from being modified by the dynamics system.
+UE - Unprotect Elevation. Will set the rod shot positive and allow the
+     elevation to be modified by the recalculation dynamics.
+
+OTHER OPERATION::
+EX - EXit to MS-DOS.  You must use the EX option before you turn the computer
+     off.  This is important so that MS-DOS will flush disk write buffers.
+     If you turn the system off with out EXiting from PC-TS then some point
+     data may be lost.
+FL - FLush point data to the disk.  This option should be used frequently
+     to assure that no point data is lost due to a power failure or shut
+     down before the EXit option is used.
+RC - ReCalculation toggle.  This is a toggle switch (ON/OFF) controlling
+     recalculation after editing a point.  If you are editing many points
+     then shut recalculation off, after all the points have been edited
+     toggle recalc. ON(TRUE) and edit the lowest point number again so that
+     recalculation will effect (update) the edited points.
+BU - Back Up the point file.  This is usally done before a balance
+     procedure so that the raw field data is saved
+CO - COmunications parameters of the RS-232 ports are set. Also you may
+     capture data from a serial device connected to a COM port.
+PS - Printer Setup is use to change the number of characters per inch
+     printed.  The printer specific data is in an ASCII file named PRINT.CFG.
+     You may modify this file for your printer; use the same file format.
+
+
+AD - Add points to file.
+     This option is the main way to get data into the computer from
+     your field book.  It will allow you to enter both horizontal and
+     vertical data. First you enter a From point number.  This number must
+     be less than the point number of the point you are entering.  If
+     you want to enter coordinates directly then enter zero(0) for
+     the From point number.  Note: This is called a From point system and
+     is dynamic in nature. This means that all points have been
+     created by coming from another point unless the From point
+     number is zero. Being dynamic in nature means that if a From
+     point (of a point) changes coordinates then the point defined
+     from the From point can change if the dynamic system is active.
+     Points can be deactivated from the dynamics of the From point
+     system by entering a 0 or negative From point in the From point
+     data position.
+
+Back Site Point (BSPt).
+     This point is the back site point of the From point.  If you are
+     using angles turned left or right then the BS point is used.
+     The BS angle is usually zero but can be modified as desired for
+     each point entered.  The BS angle edit option is set on under
+     option SE-SEtting.  If the BS point is greater than the From
+     point then the From point is automatically protect from dynamic
+    interaction.  This is necessary to maintain the integrity of the
+     dynamic point system. Why? During recalculation of the point
+     system the computer works from lower point number to higher
+     point number.  OK, now a particular point gets dynamically
+     updated with a BS point > From point.  It is now possible that
+     the BS point can also get dynamically updated hence the intended
+     BS angle changed.  So to avoid this as stated above if a BS
+     point > From point then the BS point gets protected.
+
+Setup:
+     This is a YES/NO option, it simple tells the user if this point
+     is a setuppoint. It is also linked to the HI data position in
+     that if Setup is NO then you can not enter an HI to the HI data
+     position. While we are on the subject of HI, this is required so
+     that vertical calculation can be dynamically carried through.
+     Important: Since this is a dynamic system of data points, if you
+     setup on a point with a new HI value and other points have
+     already been calculated with the old HI then to maintain the pt
+     elevations properly you must handle this one of two ways. 1.
+     Protect all the points that use the first HI so that during
+     dynamic point update there elevation remains intact. 2. Duplicate
+     the Setup point to another point then use the duplicate point as
+     the From point for your new point observation data.  You can
+     safely enter any HI value this way with out corrupting other
+     points.
+
+    ****  You must remember that this is a Dynamic System of Points.  ****
+
+Description:
+     This is a 20 character field that is use to describe a point. It
+     can be any data you wish.  It is strongly recommended that a
+     description of some type be entered for eachpoint. The reason is
+     that you can quickly tell what a point is in the field, and
+     during cogo operations.
+
+Azimuth:
+     This field is used for entering angle data to a point. You enter
+     an azimuth in the DDD-MM-SS format. There are 3 optional letters
+     that also can go in this field: 1:  A - for azimuth. 2:  R -
+     Right angle. 3:  L - Left angle.
+
+     There are two ways to define direction, by (1) azimuth or angle
+     turned right or left.  All angle input methods can be handled
+     from the AZIMUTH data entry position and the HZ-ANG field with
+     the above options. If you enter an R or L  the next added point
+     will use the angle turn method by default, and the entry will be
+     in the HORZANG data entry position. From the HORZANG data entry
+     position you may use the above 3 letters (A,R,L) to toggle
+     between entry modes at will. The BEARING data entry position can
+     be used by entering a bearing (ex. SW 10-20-30 or 30-40-10 NE or
+     s25-20e ). You optionally enter data in this field after the
+     AZIMUTH data is entered. You may press the <RETURN> key from the
+     AZIMUTH data field to jump directly to the BEARING field.  If
+     you enter a valid bearing then the previous entry to the AZIMUTH
+     field is ignored.
+
+Distance:
+     This data entry field is used to enter a distance in 1 of 4
+     ways. 1: H - Horizontal 2: R - Rod shot with vertical angle. 3:
+     P - Prism shot using a total station. 4: E - EDM shot.
+
+     The formulas that reduce the slope distance for these type of
+     shots are activated by entering a letter (H,R,P,E) with the
+     distance.  The default method letter will show when you enter
+     the DISTANCE data entry field.  You do not need to type the
+     default letter if this is the method required for the distance
+     data enter. If R,P,E is used then the next data entered will be
+     the vertical angle of that shot.
+
+Important:
+
+     All vertical angles are measured from the zenith, hence 90-00-00
+     is a level shot >90 is down hill <90 is up hill.  If the
+     vertical angle is greater than 180 then it is reduced,  Vert_Ang
+     = 360 - VA.
+
+Rod (Rod shot):
+
+     If you want elevations to be calculated you must enter a rod
+     shot. After entering the rod shot then the computer will ask you
+     for either the delta elevation or the vertical angle, depending
+     on the input mode set in the SEtting option. Delta elevations
+     are computed by Total stations.  If your instrument reads out
+     delta elevation then it is much quicker to enter delta elevation
+     than vertical angles.  However, if you are entering DISTANCE data
+     in the (Rod, Prism, EDM) mode then you must use the vertical
+     angle input mode, the vertical angle will already be entered for
+     vertical calculation so that you may press the <RETURN> key when
+     the cursor jumps back to the Vert_Ang data entry position. If
+     you enter a rod shot of 0 then you may enter an elevation
+     directly. Remember that 0.000 elevation is handled as if no
+     elevation is present for this point.
+
+HI:
+     The HI is used for vertical calculation of points that come from
+     the point being entered.  This value can only be set if Setup is
+     YES.
+
+EDit option:
+     The edit option is used to fix errors in data entry. It operates
+     the same as the add option.
+
+
+INsert point option:
+     This option is used to insert a point, all points are shifted
+     down so that a point can be inserted.  This is used rarely: Say
+     that you are entering map data to check the map, after entering
+     100 legs you find out 1 leg has been left out. You may insert
+     this leg so that the map check will close. Be aware that point
+     numbers will change, You might not want point numbers to change.
+     INsert will ask you for a point numbers to begin the downward
+     point shift.  From points and BS points will automatically be
+     adjusted for the point shift. The inserted point will have 0
+     data entries, therefore you should use the edit option to enter
+     the proper data for the inserted point.
+
+SD- Set Digitizer
+     The standard digitizer driver is a Houston Instruments full size
+     pad. This option is used to set a page on the digitizer. Every
+     time a page is placed on the digitizer the SD command must be
+     used. First you digitize a origin point. This origin point must
+     be a point with either known coordinates or a known point
+     number.  Next, the computer asks if you wish to enter
+     coordinates or point numbers. Point numbers are quicker to enter
+     than coordinates. Next you are asked if you want to orient the
+     plot page by a Grid on the page or by AZIMUTH (another known
+     point). Most of the time two known points are known, so that the
+     new page can be set quickly.  The X-Y scales are then calculated
+     so that you can be sure everything is correct. Note: you can use
+     the grid orientation to set for a double scale drawing (like a
+     road profile) to obtain areas for cut-fill calculations. After
+     Set Digitizer is complete the digitizer pad becomes an active
+     part of the Survey System.
+
+DA-Digitizer Add
+     This option is used to get coordinate data from the digitizer
+     quickly into the point file.
+
+Notes on digitizer:
+     The digitizer utilizes a point search function to return a
+     existing point in the point file.  This feature is utilized by
+     pressing the #1 key on the digitizer key pad.  If the #1 key is
+     used and an existing point is not found then no point is
+     returned.  If you want the coordinates of a point that does not
+     exist in the point file then you should press the #2 key.  An
+     audio sound indicates if an existing point has been found.   The
+     #3 key will not search for an existing point, this is useful for
+     digitizing points that are close together such as U.S.G.S.
+     contours. If you use any other key except the 3 key then the
+     program will search for an existing point.
+
+AR-ARea Computation
+     There are 3 ways that areas can be computed: 1:Keyboard  - Point
+     data comes from the keyboard. 2:Digitizer - Point data comes
+     from the digitizer. 3:File - Point data comes from a file.
+
+     The file input is very useful because a record of the areas is
+     kept and can easily be modified.  The file format is as follows:
+     ex. 001  1 3 6 9 12 -13 -14 50 0 55 33 1 Subdivision Lot #1 In
+     the above example the 1st number represents the lot number for
+     identification.  This number may be any integer type number. If
+     this number is <0 then an area accumulator will print its value
+     and then reset to 0. Next you enter the point numbers of the area
+     you want, consecutively. For circles enter PC as a positive
+     number, the center as a negative number and the PT + or -
+     depending if the arc chord area is included or not included.
+     Above circle is 12 -13 -14. You may also use thru point
+     numbering in both directions. This is accomplished by entering
+     the starting point then a 0 to indicate THRU then the ending
+     point number.  All of the point numbers between will be included
+     in the area calculations. Above  50 0 55 means 50 51 52 53 54 55
+     Finally you must close the area with the first number entered.
+     You may also enter an optional comment to aid in lot
+     identification. The keyboard input area function works
+     identically to the file input area function. The digitizer input
+     is simple. Setup the digitizer (SD),  now digitize the desired
+     area.  To close the area Press the * key on the cursor pad.  The
+     cursor need not be over the closure pt again to close.  Also you
+     may keep digitized points for another area calculation.  This is
+     useful to get the exact size for a specified lot area.  If you
+     do not want to keep any points press 00 on the cursor keypad. To
+     exit press then # key on the pad. While in the digitize mode all
+     computer control is through the digitizer keypad.  You may also
+     redigitize a incorrect point by digitizing the correct point
+     with the 9 key. If you want get the area of points that are
+     already in the data base then use the 1 key,  this will cause
+     only data base points to be returned to the area calculation
+     matrix.  Use the 2 key to digitize any point into the area
+     calculation matrix.
+
+OF-OFfset cogo function.
+     This function is very useful for finding circle center points for
+     reverse curves.  It will intersect two lines that are offset
+     perpendicularly to two known lines.  Offset right is clock-wise,
+     left Counter Clock-wise.
+
+Balance
+     The balance procedure uses the compass rule to balance
+     coordinates. First you enter the CLOSE TO Pt#,  this allows you
+     to close any loop.  The traverse should be run in the following
+     manner in order for the balance system to work properly: Pt#1 is
+     used for the coordinate base.  Pt#2 comes from Pt#1 and is used
+     to orient the survey, with a starting azimuth. Pt#3 comes from
+     Pt#2 BS to Pt#1 and is the first angle turned.
+
+
+The following is an example of how to balance a traverse loop:
+
+Example.    Point #1 is a the first setup and part of the loop.
+            Say there are 5 points in the traverse loop.
+
+            Pt#    FromPt#   BSPt#
+            ===    =======   =====
+1st setup   1        0         0      used for starting coordinates
+            2        1         0      use to enter azimuth for orientation
+            3        2         1      1st loop angle
+            4        3         2      2nd loop angle
+            5        4         3      3rd loop angle
+            6        5         4      4th loop angle (RETURN to pt# 1)
+            7        6         5      5th loop angle (closing ang., Dist.=0.0')
+            1                         ends input
+
+            Close to PT = 1
+            The BS_points must be set even if you traverse with aszmiths.
+     ***********************************************************************
+
+
+Plotting
+     The standard plotter driver is a Houston Instruments DMP-52
+     multi or single pen plotter.  This plotter should be connected
+     to serial port #1 (COM1:).
+
+   Cable Connection to Houston Instruments DM/PL 51/52 Plotters
+
+  (DB-25 pin Female)                 (DB-25 pin Female)
+    P L O T T E R                       I B M - P C
+        1  --------------------------------- 1
+        2  --------------------------------- 3
+        3  --------------------------------- 2
+        6  --------------------------------- 20
+        7  --------------------------------- 7
+        20 --------------------------------- 6 -----+
+                                             5 -----|   (Jump 5,6,8 together)
+                                             8 -----+
+
+  (DB-25 pin female)                 (DB-9 pin Female)
+    P L O T T E R                       I B M - AT
+        2  --------------------------------- 2
+        3  --------------------------------- 3
+        6  --------------------------------- 4
+        7  --------------------------------- 5
+        20 --------------------------------- 6 ----+
+                                             8 ----|
+                                             1 ----+
+
+  (DB-25 pin Female)                 (DB-25 pin Female)
+    P L O T T E R                       I B M - P C
+        1  --------------------------------- 1
+        2  --------------------------------- 3
+        3  --------------------------------- 2
+        7  --------------------------------- 7
+        20 --------------------------------- 6
+                                             4-----+  Jumper 4,5
+                                             5-----+
+
+  (DB-25 pin female)                 (DB-9 pin Female)
+    P L O T T E R                       I B M - AT
+        2  --------------------------------- 2
+        3  --------------------------------- 3
+        7  --------------------------------- 5
+        20 --------------------------------- 6
+                                             8 ----+  Jumper 8,7
+                                             7 ----+
+
+     Plotting is accomplished by entering a series of simple commands
+     into a file that has the same name as the point file that you
+     are using, plus the file extension .LN (ex. Mt-View.LN). The
+     commands are entered into the file using an editor.  The editor
+     that is best suited for this operation is SIDEKICK.  SIDEKICK
+     can be activated for use while you are running the survey
+     program.  Make sure that the baud rate and serial word frame is
+     setup using the DOS system MODE command before plotting (ex.
+     MODE COM1:9600,N,8,1).  This command can be entered into the
+     AUTOEXEC.BAT file so that at system statup the baud rate is
+     automatically setup.
+
+AN-Angle math.
+     This option is for adding and subtracting angles.  If you want
+     to use a bearing instead of an angle press <RETURN> at the Enter
+     angle ? prompt and the computer will ask for a bearing.  Press
+     the equal sign (=) to terminate angle math.
+
+CU-Curve computations.
+    This option is used to calculate varible of a circle given any
+    two variables.
+
+Important:
+     Make sure you use the exit function (EX) before turning the
+     computer off. This will tell MS-DOS to flush disk write buffers,
+     assuring that no point data is lost.
+
+Trademarks:
+     MS-DOS (Microsoft Corpration), Sidekick (Borland Inc.), IBM PC
+     (International Business Machines).
+
+Abreviations:
+     COGO    = coordinate geometry.
+     EDM     = electronic distance measuring device
+     pt      = point
+     no.     = number
+     el/elev = elevation
+
+================= L E A R N   I N F O =====================
+
+    Key                Action
+  =======              ======
+  Page-Up,   ^P        Put Next Number in User Storage Register.
+                       Use ^P to set the register display range.
+
+                       Use + - = * / and <SPACE>
+
+  Page-Down, ^G        Get Number from User Storage register.
+                       Any resgiter (1-100) can be recalled.
+
+                       Use  R ight  L eft  and  A zimuth  for Angles type.
+                       This 1 of 2 ways to retrived an angle and turn
+                       it to the right or left.
+                       Otherwise the angle is set as an absolute azimuth,
+                       regaurdless of Angle Input Mode indicators state.
+
+
+            F1-F10     Get number from rolling register set displayed on screen.
+                       F10 for angles activates a Point to Point calculation.
+
+  Alternate F1-F10     (Put, Add, Subtract, Multiply, Divide) the
+                       display regiter set by the Next Number.
+
+  Shift     F1-F10     Get Number from the displayed register set.
+
+  Control   F1-F10     Get the Number of Point - Function Key value.
+                       F10 alway is equal to the current Number of Points.
+                       This is only active in the Point or Integer input mode.
+
+  Control   F1-F10     Get User Register Angle and ask R ight L eft or A szmith.
+
+Notes: When storing a number in a user register the first key sequence pressed
+       must be the one of then Register Storage key sequences above.
+
+       Next, use the comment symbom '{' to tell the user the input data
+       description.
+
+       Next, If the user is to input this data then cause an input error.
+       The best way for points and real numbers is to type a short prompt
+       for the input data. This will serve as an additional input prompt.
+       If the input data is azimuth then cause the error by entering --.
+       If the input data is description then cause error by entering : or ;.
+
+IF THEN ELSE Operation
+======================
+
+IF is the menu option to activate the IF function.
+IF should only be used when program a Script in the Learn Mode.
+
+EI (END IF) is required to end all IF block script.
+
+Example #1
+
+IF Register #1 > Register #2 then
+   PP 1 2
+   PP 3 4
+   PP 4 5
+ENDIF (EI)
+
+In the above example if the argument evaluates true then three Point/Point
+Operation will be performed.
+
+Example #2
+
+IF Register #1 > Register #2 then
+   PP 1 2
+   PP 3 4
+   PP 4 5
+ELSE  (ES)
+   PP 6 7
+   PP 8 9
+   PP 9 10
+ENDIF (EI)
+
+In example #2 if the argument is false the the ELSE block of script will
+be performed.
+
+NESTED IF Statments (10 Levels)
+===============================
+
+IF R1 > R2 then
+  PP 1 2
+  PP 3 1
+ELSE IF R3 = R4 then
+       PP 3 4
+       PP 4 2
+     ELSE IF R5 < R6 then
+            PP 6 7
+            PP 8 9
+            PP 10 11
+          ELSE PP 20 30
+          ENDIF
+     ENDIF
+ENDIF
+
+In the above example only one block of script will be performed.
+This program structure is the same as the Pascal CASE statement.
+
+
+
+At any Input Time you may use the follow control characters.
+============================================================
+
+{  Begin Comment Line
+&  Extented Comment Line (used as the last character in a comment line)
+   Then Press the Comment Symbol '{' again to enter the next part of
+   the comment.
+!  Wait Until Keypressed (User Pause)
+$  Delay 1 second
+
+Do not use these characters in the Description of a point.
+
+
+LINE FILE DRAWING TEMPLETE
+==========================
+To write a Line File Drawing Templete use SideKick to edit file DRAW.LN.
+All templetes are put in this file.
+
+Give the Templete a name and put two colons after it.
+Then enter the line drawing commands using the # sign to indicate
+point numbers that will be modified with a point offset.
+
+Example
+
+ROAD-CURVE::  Draw C.L. and edges of road arcs
+2 #2 #5 #1 1 1 p
+2 #3 #6 #1 0 1 p
+2 #4 #7 #1 1 1 p
+
+
+Use DR-DRaw Template in PC-Turbo Survey.
+This procedure will ask for an offset to add to the points with a # sign
+in front of them (as shown above).
+The result output of this procedure is appended to a line file .LNZ.
+This line file (.LNZ) should be block read ^KR with SideKick into the
+line file that the user is building.
+
+
+
+
+=================== H O W   T O   B U Y  ===============
+
+      PC-Turbo Survey program is licenced by CompuRight Industries.
+      If you wish to purchase a copy PC-Turbo Survey then you
+      must first fill out the licenced agreement below.  Then
+      contact CompuRight Industries at tel. (203)-426-1254 and
+      inform us of your interest.
+
+
+LICENCE AGREEMENT:
+
+      If you purchace a copy of PC-TS then you have the right to use
+      PC-TS on a single computer system.  You may not make any copies
+      of PC-TS.  You may not distribute any copies of PC-TS to anyone
+      at any time in any form.  You may not distribute any copies of
+      the manual data on the distribution disk in any form.  In short
+      your copy of PC-Turbo Survey is for use by you and your company
+      only on a single computer system. If you wish to have PC-TS on
+      another computer system in the same office as the original
+      registered copy then you must contact CompuRight Industries for
+      permission and instructions to do so. Anyone or company
+      interest in PC-TS must purchase PC-TS from CompuRight
+      Industries or an authorized representative.
+
+      PC-TS is a Copyrighted (1988) system and must be treated accordingly.
+      If duplicate PC-TS serial numbers are discovered to exist then
+      this will be considered a violation of this agreement and
+      copyright laws and will be handled legally.
+
+      All registered users of PC-TS will be asigned a serial number
+      to their copy.  This registered serial number must be kept on
+      hand so that you may recieve user support on PC-TS.  As a
+      registered user you are intitled to discounts on future
+      developments to PC-TS.  Future upgrades will include automated
+      contour plotting, profile design and plotting of roadways, and
+      more.
+
+      If you agree to the above agreement then Print you full name,
+      address, date and telephone number then sign your name on a
+      printed copy of this file.  Mail this printed signed page to
+
+      CompuRight Industries
+      P.O. Box 719
+      Newtown, CT 06482
+
+
+Price of PC-Turbo Survey.
+
+The retail price of the full PC-TS system is $2295.00.
+
+A special offer will be extended for a limited time.
+
+If you purchase PC-TS before Nov. 1, 1988 then you will recieve a 48%
+discount on the retail price. (tax and handling not included).
+

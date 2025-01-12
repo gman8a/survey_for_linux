@@ -1,0 +1,384 @@
+     The object of Field Cad is to compose maps while in the field.
+     ==============================================================
+
+     There are two main advantages to this method of map making.
+
+     1. The map is subject to a direct interpretation of its data by the
+        people who are taking the field shots.  This will minimize errors
+        of interpretation by office personnel who were not in the field
+        and do not have first hand information of the work site.
+
+     2. The time to compose the base maps from a point plot is eliminated.
+
+How to use FIELD CAD.
+=====================
+
+   The are two main modes of operation.
+
+Mode 1. Markers are coded using a preset code system for a set of markers.
+        This code system is utilized in the field to code markers using two
+        digit codes. The first digit would always be the marker command
+        code symbol '.' (dot or period), the second digit is the marker code.
+        Valid marker codes are 0-9 and A-Z allowing a total of 35 markers
+        to be used with field cad;  35 markers is the limit.
+
+        This system of marker coding may be preferred because it minimizes
+        the number of characters required to indicate a unique marker.
+
+Mode 2. Markers are coded using key WORDS like MON for MONument.
+        The Key words for the markers are entered into a file: MARKER.KEY.
+
+        This mode of operation may be preferred because:
+        1. The field workers are already accustom to working with key WORDS
+           to indicate markers, hence they would not have to adopt a new
+           method of marker coding and can very easily adopted.
+
+        2. Legally speaking a key word would have more wait versus a code
+           number because the code number has a greater change of entry error.
+           The key word is most always a simple abbreviation of the markers
+           real name hence unless the worker thinks he is shooting something
+           other than what he is really shooting no errors will occur.
+
+
+      As the manager you must decide which mode of operation you wish to use.
+
+      Mode 1 is referred to as Marker CODES.
+      Mode 2 is referred to as Marker WORDS.
+
+      You can use both modes at the same time if you prefer, that is you
+      may enter some description with CODE numbers and others with key WORDS.
+
+      Following is a list of preset markers from file MARKER.KEY:
+
+      Preset      Field      Field
+      Marker #    CODE #    key WORD     Description
+      ========    ======    ========     ===========
+        00          0         STK          STaKe
+        00          0         WIT          WITtness
+*       01          1         ACM          Arial Control Mark
+*       01          1         Arial        Arial Control Mark
+        02          2         MON          MONument
+        03          3         FP           Fence Post
+        04          4         TV           TraVerse or control
+        05          5         HT           Hub and Tack
+        05          5         HUB          HUB
+        05          5         PK           PK nail
+        05          5         SPK          SPiKe
+*       06          6         DH           Drill Hole
+        07          7         PIPE         PIPE
+        08          8         IP           Iron Pin
+        09          9         GS           Ground Shot or No Marker
+        10          A         UI           United Illuminating Pole
+        10          A         WT           Woodbury Telephone
+*       10          A         CLP          Conn. Light & Power
+        10          A         SNET         Southern New England Telephone
+        11          B         TREE         TREE
+*       11          B         DT           Deciduous Tree
+        12          C         ET           Evergreen Tree
+        13          D         SB           Stone Bound
+        13          D         RB           Rock Bound
+        14          E         TP           Test Pit
+        15          F         PERK         PERK hole
+        16          G         FH           Fire Hydrant
+        16          G         FHYD         Fire Hydrant
+*       17          H         CB           Catch Basin
+        18          I         MH           Man Hole
+        19          J         GV           Gas Valve
+        20          K         WV           Water Valve
+        21          L         WELL         WELL water
+        21          L         WEL          WELl water
+        22          M         LP           Light Pole
+        23          N         GP           Guy Pole
+        24          O         GA           Guy Anchor
+        24          O         GW           Guy Wire
+*       25          P         CHD          Conn. Highway Dept. Mon.
+
+        The number corresponds to the marker code and the letters make up
+        the key WORD that would be recorded in the field.  This mode does
+        NOT require the marker command code '.' prefix.
+
+        This list may easily be customized. The two associated files are:
+
+          1.  MARKER.LN0  which define the line file drawing commands
+                          to produce the marker on the plot
+
+          2.  MARKER.KEY  which contains the key WORDS and the associated
+                          marker numbers in file: MARKER.LN0.
+                          Note: The first marker sequence in the MARKER.LN0
+                                file is marker no.1  ect.
+
+How to Draw LINES
+=================
+
+      Lines may be draw using a coding system.
+
+      There are 13 different line type that can easily be controlled
+      in the field in a few ways.
+
+      All line are considered to be multi. lines, that is that they are
+      composed of 1 or more individual lines.
+
+      A line is coded by entering a two digit code.
+
+      The first digit is the line reference no. and ranges from 0 to 7.
+      The second digit is the line type and ranges from 0-9 and A B C D.
+
+      All line reference numbers have a default line type.
+
+      The "line reference number" is ALWAYS required as the first digit in
+      the point description.  The "line reference no." may be substituted
+      with "alternate symbols" to indicate the proper line reference.
+
+      The line type or second digit is not required,  although if entered
+      the default line type is suppressed and the entered line type becomes
+      associated to the referance line.
+
+      All line reference numbers have an ALTernate reference symbol.
+      The "Alternate reference symbols" and "line reference number"
+      are completely interchangeable.
+
+      Line Reference      ALTernate Ref.        Default
+        Numbers             Symbol             Line Type
+      ============        =============       ===========
+           0                   =               0 - Solid
+           1                   +               1 - Dashed
+           2                   -               2 - Dashed Dashed
+           3                   *               3 - Long Dashed
+           4                   /               4 - Dotted
+           5                   O              10 - Stone Wall
+           6                   X              11 - Fence
+           7                   Y              12 - Stone Wall with Fence
+
+
+      The Alternate symbols have been chosen to Bring-to-Mind
+      their default line types.
+
+      To indicate that a point is to be included in a line; enter
+      the line Reference no. or Alt. symbol as the __FIRST__ code
+      of the point ID description code.
+
+>>>   A Line Type code only needs to be entered for the first point
+      of each line. If a line type code does not follow the Reference
+      line no. or alternate symbol for the first point of a line then
+      the default line type is used. If the LT code is present then
+      the default line type is suppressed.
+
+                                    ex.  2A   ref#2  LT=10  Stone wall
+                                         71   ref#7  LT=1   Dashed
+                                         *B   ref#4  LT=11  Fence
+                                         O0   ref#5  LT=0   Solid
+                                         2    ref#2  LT=2   Dashed Dashed
+                                         7    ref#7  LT=12  Stone W & Fence
+                                         *    ref#4  LT=3   Dotted
+                                         O    ref#5  LT=10  Stone Wall
+
+
+      After the first point of a line has been shot all remaining points
+      of that line can be coded as a single Line ref. no. or alt. symbol.
+      However you may code both the ref. no. and the line type for all
+      points on the line.  Many data collector will repeat a description
+      code hence the Ref# and LT may occur thur out the line.
+
+>>>   The LAST point on the line or the END of the line is coded by
+      entering a '9' as the second digit
+                                     ex.  19  ends ref line #1
+                                          -9  ends ref line #1
+                                          79  ends ref line #7
+                                          =9  ends ref line #2
+
+>>>   The LAST point may also be coded by entering two alternate symbols
+      codes as the first and second characters.
+                                     ex.  --  ends ref line #1
+                                          YY  ends ref line #7
+                                          ++  ends ref line #0
+                                          ==  ends ref line #2
+
+>>>   The END line commands can only be coded as shown in the examples above.
+      A double Reference no. (22) will NOT end a line.
+
+      Generally if using "Line Reference no."  0-7 then the alternate
+      symbol of the referance no. will not be used to refer to the line.
+      For example consider this coding:
+                                               10
+                                               1
+                                               1DH
+                                               +
+                                               19
+
+      Here the '+' alt. symbol was substituted while still shooting
+      the line.  This is OK except, if the symbol and ref. no. do not
+      correspond then another new line has been started.
+      For this reason if you commence a line with a ref. no. then use
+      the ref. no. for that line to completion.  Conversely if you
+      commence a line with an alternate symbol then use the symbol to
+      refer to the line to completion.  This is simply good practice.
+
+
+Marker that fall on Lines  (LINE:MARKERS)
+=========================================
+
+>>>   If a marker fall on a line then code the Line first and the marker
+      second.  ***  There are no exception to this rule.  ***
+      Lines are always coded first and as the first characters of the
+      description code.
+
+      Using WORD Key Marker mode.
+      ===========================
+      The only quirk occurs when  the "Line:Marker" is the first point
+      of a line. "Line:Marker" means a marker falls on a line.
+
+      Example: If coded  '=DH' then the 'D' here will change the default
+      line type to 13.   ( Note: LT codes are 0123456789ABCD.)
+      You may have intended a LT#0 (solid line) but you will get a
+      double line (LT#13).
+      This quirk only happens when a key WORD begin with a letters ABC or D.
+
+>>>   The simple remedy of this quirk is to code the first point of
+      Line:Markers with a 2 digit line code followed by the key WORD
+      or marker CODE no.
+
+                         ex.  = DH       LT=2    (default)
+                              =4DH       LT=4
+                              32DH       LT=2
+                              3 DH       LT=3    (default)
+                              31.6       LT=1
+
+>>>    If your key WORD code begin with 'E' or greater then there is no
+       problem.
+       But as a general rule if the first point of a line is also a
+       marker (Line:Marker) then enter a 2 digit line code.
+       The space character is very handy when the default line type
+       is desired.
+
+       If you ignore this rule, the chances are that this quirk will
+       not happen much because most words begin with letters greater than 'D'.
+       The marker WORDs that begin with ABC or D have been flagged above
+       with an asterisk *. There are only a few and most of them probily
+       would not commence a line anyway.
+       In other words the key WORD can directly follow the line Reference no.
+       The marker will always be interpreted properly, and only in the
+       incidence where a "Line:Marker starts a line and the marker begins
+       with letters ABC or D" can the line type be altered.  This does
+       not pose a grave problem even if it does occur because only a single
+       code need be changed in the line file to correct the line type.
+
+       Following is a chart of line types and referance numbers:
+
+             Line     Ref.    Alt.         Line         Description
+             Type     no.    Symbol        Look           and Use
+            ======   =====   ======     ===========     ============
+              0       0        =        ___________     Solid
+
+              1       1        +        _ _ _ _ _ _     Dashed
+
+              2       2        -        ___ _ _ ___     Dashed Dashed
+
+              3       3        *        ___ _ ___ _     Dashed Dotted
+
+              4       4        /        ...........     Dotted
+
+              5                         ____ _ ____     Dashed
+
+              6                         _ _ _ _ _ _     Dashed
+
+              7                         __ __ __ __     Long Dash
+
+              8                         ___ ___ ___     Longer Dash
+
+              9                          end line       END LINE COMMAND
+
+              A       5        O        oooooooooooo    Stone Wall
+
+              B       6        X        --x--x--x--x    Fence
+
+              C       7        Y        ooxooxooxoox    Stone Wall with Fence
+
+              D                         ============    Double Line
+
+
+          The above chart show the 13 possible line types that may be
+          coded for in the field by using the LINE TYPE no. for the
+          desired LT.             ex.
+                                     26    Ref. Line 2 LT 6
+                                     2     Ref. Line 2 LT 2 (default)
+                                     =     Ref. Line 0 LT 0 (default)
+                                     5     Ref. Line 5 LT A (default)
+                                     55    Ref. Line 5 LT 5
+                                     O     Ref. Line 5 LT A (default)
+
+          As you can see almost anything goes for indicating a line.
+          If you need to draw more that one line at the same time
+          with the same line type then use the line REFERENCE numbers
+          instead of the alternate symbols to avoid confusion.
+          ex. Need to draw 2 pavement lines:
+                                             00      Ref# 0 LT=0
+                                             10      Ref# 1 LT=0
+                                             0DH     Line 0 with Drill Hole
+                                             1FH     Line 1 with Fire Hyd.
+                                             0       Line 0 continued
+                                             1.1"IP  Line 1 with a 1"IP
+                                             0       Line 0 continued
+                                             1IP     Line 1 with Iron Pin
+                                             09      END Line 0
+                                             19      END Line 1
+
+             The above example may also be coded other ways:
+                                             =       Ref# 0 LT=0 (default)
+                                             -0      Ref# 1 LT=0
+                                             =DH     Line 0 with Drill Hole
+                                             -FH     Line 1 with Fire Hyd.
+                                             =       Line 0 continued
+                                             - 1"IP  Line 1 with 1"IP
+                                             =       Line 0 continued
+                                             -IP     Line 1 with Iron Pin
+                                             ==      END Line 0
+                                             --      END Line 1
+
+
+=============================================================================
+>>>    Another more important quirk is when using key WORDS that
+       include a numbers as part of the description.
+                           1"PIPE.  or 1/2"IP
+       Why ?
+       The no. will be interpreted as a line ref. no. or a line type.
+       Any number from 0-7 as the first character of the description
+       code will be interpreted as a "line referance number".
+
+       To solve the problem code the no. after the key WORD.
+                            PIPE 1".
+
+       If this situation occurs for a Line:Marker then there is no problem.
+                           1 1"PIPE      use a space before the description.
+
+***    This quirk situation should be kept in mind when recording markers. ***
+
+       Another remedy is to enter the marker CODE no. The program
+       scans for the marker CODE no. before checking for the key WORDS.
+                           .31"PIPE
+
+       If the marker CODE no. is not known then code a space after '.',
+       which will be interpreted as a bad marker CODE causing the
+       key WORD to be interpreted.
+>>>                        . 1"PIPE      ***  THIS IS THE BEST WAY  ***
+                           ..1"PIPE
+
+       Here the '..' code may be thought of as a NO Line or NO Marker sequence.
+       The '..' code is the best solution to this quirk because everything
+       comes out correct, and it is a simple exception rule to remember.
+
+       If you put .1"PIPE then the program will use marker no. 1 with
+       a description "PIPE.
+
+***    AS A GENERAL RULE PUT NUMBERS AFTER THE KEY WORDS.
+                           PIPE 1"
+       OR CODE like
+                           ..1"PIPE
+
+       If this quirk is ignored then a line has commenced.  This does not
+       pose much of a problem because the marker will still plot and the
+       error can easily be detected after the first plot.
+
+==============================================================================
+
+*** END of FIELD CAD DOC. ***
+

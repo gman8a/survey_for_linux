@@ -1,0 +1,10 @@
+get rotate point data
+rfnl11 {Enter LOWER Range pt # ? }lower-pt
+12 {Enter UPPER Range pt # ? }upper-pt
+13 {Enter Rotate ABOUT pt # (outside range) ? }about-pt
+14 {Enter Rotate INTO Line pt #1 (outside range) ? }line1-pt
+15 {Enter Rotate FROM Line pt #2 (inside range) ? }line2-pt
+
+
+
+..
