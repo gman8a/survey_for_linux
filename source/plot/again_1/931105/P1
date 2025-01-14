@@ -1,0 +1,8 @@
+type box_label_rec_type = record
+                            do_it_flag    : boolean;
+                            box_str       : string;
+                            letter_height : integer;
+                          end;
+
+var box_label_rec0 : box_label_rec_type;
+

@@ -1,0 +1,69 @@
+Archive Directory : DISK-2
+       Disk Title : PC-TS Plot Stuff
+ Disk Description : Plot User Defined Lines
+
+==TREE=======================================================
+Directory PATH listing for Volume SURVEY PLOT
+Volume Serial Number is 2D04-12DD
+B:\
+ÃÄÄÄNEW
+ÀÄÄÄ931105
+
+==DIR========================================================
+       Filename.Ext    Bytes    Contents      Relative path
+a------BASICS4 .TPU    29504  11/01/93 09.16  B:\
+a------DRAWUSER.BAK     2153  11/02/93 11.26  B:\
+a------DRAWUSER.PAS     2153  11/02/93 19.03  B:\
+a------ECA-115 .ARJ   378357   1/09/80 01.10  B:\
+a------ED      .PCK      555  11/02/93 16.08  B:\
+a------FILESTUF.TPU    14512  11/01/93 09.16  B:\
+a------GRAPH   .TPU    33456  10/27/92 07.00  B:\
+a------LINE    .PAS      716   8/11/88 01.22  B:\
+a------MENUSTUF.TPU    10384  11/01/93 09.16  B:\
+a------MOUSESTF.TPU     2800  11/01/93 09.16  B:\
+a------PLOT1   .PAS    13756  11/02/93 22.11  B:\
+a------PLOT1   .TPU    20560  11/02/93 11.27  B:\
+a------PLOT2   .PAS    23321  11/02/93 22.02  B:\
+a------PLOT3   .PAS    19539  11/02/93 21.37  B:\
+a------PLOT51  .PAS    22408  11/02/93 19.15  B:\
+a------PLOT51  .TPU    32464  11/02/93 11.27  B:\
+a------PLOT61  .PAS    22437   6/23/93 13.05  B:\
+a------PLOTHI  .PAS    18765   8/03/91 14.57  B:\
+a------PLOTHP  .PAS    27492   6/23/93 12.51  B:\
+a------PLOTVAR .PAS     2815  11/02/93 20.35  B:\
+a-----vSURVEY PLOT         0  11/02/93 11.21  B:\
+a------SURVEY61.PAS     9022   6/23/93 13.06  B:\
+a------SURVEYHI.PAS     8417   6/23/93 13.07  B:\
+a------SURVEYHP.PAS     9917   6/23/93 13.00  B:\
+a------SURVEYP .EXE   100928  11/02/93 22.13  B:\
+a------SURVEYP .PAS     9076  11/02/93 21.43  B:\
+a------TPC     .EXE    75400  10/27/92 07.00  B:\
+a------TURBO   .TPL    48432  10/27/92 07.00  B:\
+a------USERLINE.PAS     1695  11/02/93 10.43  B:\
+a------XCEPTION.TPU     1296  11/01/93 09.16  B:\
+------\931105          97622   12 File  - --- B:\
+a------C       .BAT       19  11/02/93 11.06  B:\931105\
+a------DRAWUSER.PAS     2239  11/05/93 13.30  B:\931105\
+a------ED      .PCK      555  11/05/93 14.22  B:\931105\
+a------P1                272  11/05/93 12.43  B:\931105\
+a------PLOT1   .PAS    14128  11/05/93 13.29  B:\931105\
+a------PLOT2   .PAS    23321  11/02/93 22.02  B:\931105\
+a------PLOT3   .PAS    19539  11/02/93 21.37  B:\931105\
+a------PLOT51  .PAS    22442  11/03/93 16.22  B:\931105\
+a------PLOTVAR .PAS     2815  11/02/93 20.35  B:\931105\
+a------SURVEYP .PAS    10351  11/05/93 14.09  B:\931105\
+a------TREEINFO.NCD       27  11/05/93 11.55  B:\931105\
+a------USERLINE.PAS     1914  11/05/93 14.22  B:\931105\
+------\NEW             95344    8 File  - --- B:\
+a------DRAWUSER.PAS     2245  11/02/93 10.40  B:\NEW\
+a------PLOT1   .PAS    13755  11/02/93 11.25  B:\NEW\
+a------PLOT2   .PAS    23304  11/02/93 11.12  B:\NEW\
+a------PLOT3   .PAS    19612  11/02/93 11.24  B:\NEW\
+a------PLOT51  .PAS    22566  11/02/93 10.49  B:\NEW\
+a------PLOTVAR .PAS     2840   8/08/88 02.59  B:\NEW\
+a------SURVEYP .PAS     9166  11/02/93 11.15  B:\NEW\
+a------USERLINE.PAS     1856  11/02/93 10.32  B:\NEW\
+  50 files= 1135296 bytes (using 1148928)    2 subdir(s)    62Kb free on B:
+
+=============================================================
+** End **

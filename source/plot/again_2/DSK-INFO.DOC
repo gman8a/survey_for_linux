@@ -1,0 +1,46 @@
+Archive Directory : DISK-1
+       Disk Title : PC-TS Plot Line
+ Disk Description : Plot User Defined Lines
+
+==TREE=======================================================
+Directory PATH listing
+B:\
+ÀÄÄÄPLOT
+    ÀÄÄÄLINESTUF
+
+==DIR========================================================
+       Filename.Ext    Bytes    Contents      Relative path
+------\PLOT           227588   28 File  1 Dir B:\
+a------C       .BAT       19  11/02/93 11.06  B:\PLOT\
+a------DRAWUSER.PAS     2239  11/05/93 13.30  B:\PLOT\
+a------ED      .PCK      555  11/05/93 14.22  B:\PLOT\
+a------P1                272  11/05/93 12.43  B:\PLOT\
+a------PLOT1   .PAS    14128  11/05/93 13.29  B:\PLOT\
+a------PLOT2   .PAS    23321  11/02/93 22.02  B:\PLOT\
+a------PLOT3   .PAS    19539  11/02/93 21.37  B:\PLOT\
+a------PLOT51  .PAS    22442  11/03/93 16.22  B:\PLOT\
+a------PLOTVAR .PAS     2815  11/02/93 20.35  B:\PLOT\
+a------SURVEYP .PAS    10351  11/05/93 14.09  B:\PLOT\
+a------TREEINFO.NCD       27  11/05/93 11.55  B:\PLOT\
+a------USERLINE.PAS     1914  11/05/93 14.22  B:\PLOT\
+------\LINESTUF       129966   16 File  - --- B:\PLOT\
+a------BOX1    .PAS     1452  12/21/93 16.03  B:\PLOT\LINESTUF\
+a------C       .BAT       19  11/02/93 11.06  B:\PLOT\LINESTUF\
+a------DRAWUSER.BAK     8061  12/23/93 10.10  B:\PLOT\LINESTUF\
+a------DRAWUSER.PAS     8039  12/23/93 10.12  B:\PLOT\LINESTUF\
+a------ED      .PCK      555   1/18/94 11.22  B:\PLOT\LINESTUF\
+a------P1                272  11/05/93 12.43  B:\PLOT\LINESTUF\
+a------PLOT1   .BAK    14177  12/21/93 17.42  B:\PLOT\LINESTUF\
+a------PLOT1   .PAS    14236  12/23/93 10.09  B:\PLOT\LINESTUF\
+a------PLOT2   .PAS    23321  11/02/93 22.02  B:\PLOT\LINESTUF\
+a------PLOT3   .PAS    19539  11/02/93 21.37  B:\PLOT\LINESTUF\
+a------PLOT51  .PAS    22442  11/03/93 16.22  B:\PLOT\LINESTUF\
+a------PLOTVAR .PAS     2815  11/02/93 20.35  B:\PLOT\LINESTUF\
+a------SURVEYP .PAS    10351  11/05/93 14.09  B:\PLOT\LINESTUF\
+a------TREEINFO.NCD       27  11/05/93 11.55  B:\PLOT\LINESTUF\
+a------USERLINE.BAK     2330  12/23/93 10.11  B:\PLOT\LINESTUF\
+a------USERLINE.PAS     2330  12/23/93 10.26  B:\PLOT\LINESTUF\
+  28 files= 227588 bytes (using 235520)    2 subdir(s)   954Kb free on B:
+
+=============================================================
+** End **
